@@ -74,9 +74,26 @@ h2 small{font-family:"Noto Sans SC",sans-serif;font-size:13px;color:var(--muted)
 .src{margin-top:auto;padding-top:6px;font-size:13px;font-weight:700}
 /* purchase method */
 .tag.buy-m{background:var(--ink);color:var(--bg)}
-.buybox{background:var(--surface2);border-radius:12px;padding:12px 14px;font-size:13.5px}
-.buybox h4{margin:0 0 5px;font-size:13px;letter-spacing:.03em;color:var(--teal)}
-.buybox p{margin:0}
+.buybox{background:var(--surface2);border-radius:12px;font-size:13.5px;overflow:hidden}
+.buybox summary.buy-head{cursor:pointer;list-style:none;padding:12px 14px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
+.buybox summary.buy-head::-webkit-details-marker{display:none}
+.buybox summary.buy-head:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.buy-title{font-size:13px;font-weight:800;letter-spacing:.03em;color:var(--teal)}
+.buy-chev{margin-left:auto;font-size:15px;font-weight:900;color:var(--teal);line-height:1;transition:transform .15s ease}
+.buybox[open] .buy-chev{transform:rotate(180deg)}
+.buy-sum{flex:1 1 100%;order:3;font-size:12.5px;color:var(--muted);line-height:1.5}
+.buy-hint{font-size:12px;font-weight:700;color:var(--teal);white-space:nowrap}
+.buy-hint .h-open{display:none}
+.buybox[open] .buy-hint .h-open{display:inline}
+.buybox[open] .buy-hint .h-closed{display:none}
+.buy-body{border-top:1px dashed var(--line);padding:4px 14px 13px}
+.buy-sec{margin-top:10px}
+.buy-sec:first-child{margin-top:6px}
+.buy-sec h5{margin:0 0 4px;font-size:12.5px;font-weight:800;color:var(--ink);letter-spacing:.02em}
+.buy-sec ul{margin:0;padding-left:18px;display:grid;gap:3px}
+.buy-sec li{line-height:1.55}
+.buy-sec li.warn{color:var(--red);font-weight:600}
+@media(prefers-reduced-motion:reduce){.buy-chev{transition:none}}
 .mfilters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 4px}
 .mfilters .lab{font-size:13px;font-weight:800;color:var(--muted)}
 .mchip{border:1px dashed var(--line);background:transparent;color:var(--ink);padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
@@ -207,7 +224,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 
 <section aria-labelledby="buy-h">
 <h2 id="buy-h">🎫 购买方式总览 <small>先搞清用哪套系统，再看下面的单项卡片</small></h2>
-<p class="sub">这次逐项核查后，这批活动实际就四类门槛：两套 ufotable 预约系统、Jump Festa 的 App 抽选、以及「直接去买 / 根本不能买」。每张活动卡里新增的深色标签就是它的购买方式，浅色框是具体条件与坑。</p>
+<p class="sub">这次逐项核查后，这批活动实际就四类门槛：两套 ufotable 预约系统、Jump Festa 的 App 抽选、以及「直接去买 / 根本不能买」。每张活动卡里的深色标签就是它的购买方式；卡内的「怎么买 · 条件」默认折叠，点标题展开，按结论、时间、门槛、限购、线上与注意分条列出，再点一次收起。</p>
 <div class="sys-grid">
 <div class="sys"><h3>🅰 LivePocket 抽选 — ufotable Cafe（东京·名古屋·大阪）</h3>
 <p>固定<strong>每周循环</strong>（三个城市的 Cafe / マチ★アソビCAFE，含只买周边——物贩也要预约，开场 30 分钟后才放物贩客人进）：</p>
@@ -261,7 +278,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 
 <section aria-labelledby="ev-h">
 <h2 id="ev-h">活动与贩售一览</h2>
-<p class="sub">第一排按场贩 / 通贩筛，第二排按<strong>购买方式</strong>筛；每张卡的深色标签是购买方式，浅色框「怎么买 · 条件」是抽选时间、证件 / 会员门槛、限购与官方没写明的部分，卡片下方的<strong>「📦 商品一览」点开就是官方逐项清单</strong>（商品名＋价格＋嵌在卡内的官方一览图与行首单品图，<strong>点图可看大图</strong>）；官方有合并海报的用官方原图，没有的在清单顶部有一块本站按官方数据生成的海报式一览板（已标注非官方），搜索框也能搜到商品名。状态包含进行中、即将开始与明天发售。已结束的放在页面下方单独一节，避免误认。</p>
+<p class="sub">第一排按场贩 / 通贩筛，第二排按<strong>购买方式</strong>筛；每张卡的深色标签是购买方式，「怎么买 · 条件」默认折叠、点击展开，里面按分类分条列出抽选时间、证件 / 会员门槛、限购与官方没写明的部分，卡片下方的<strong>「📦 商品一览」点开就是官方逐项清单</strong>（商品名＋价格＋嵌在卡内的官方一览图与行首单品图，<strong>点图可看大图</strong>）；官方有合并海报的用官方原图，没有的在清单顶部有一块本站按官方数据生成的海报式一览板（已标注非官方），搜索框也能搜到商品名。状态包含进行中、即将开始与明天发售。已结束的放在页面下方单独一节，避免误认。</p>
 <div class="filters" role="group" aria-label="筛选">
 <button class="chip" data-f="all" aria-pressed="true">全部</button>
 <button class="chip" data-f="venue" aria-pressed="false">🏬 场贩 / 店头</button>
@@ -417,6 +434,121 @@ var BUY = {
 '2026年11月一般发售新品（Jump 日历）':{mf:'walkin fcfs',tags:['店头通常贩售（一般零售）'],text:'都是一般零售新品：在各官方渠道 / 店头直接买，无抽选、无预约门槛，Jump 日历未标渠道限制和限购。樱饼挂件 Vol.5 / Vol.6（Tapioca，各 ¥1,100，11 月中旬）；Look Up 宇髄天元 前音柱 ver.（MegaHouse，¥4,400，11 月下旬；另有 Look Up 迷你收藏 ¥880 同为 11 月下旬）；G.E.M. 掌上义勇【再贩】（¥8,580，11 月下旬）；S.H.Figuarts 童磨（BANDAI SPIRITS，¥11,000，Tamashii Web 列 2026/11/21 发售、2026/6/1 起曾开预约）。⚠️ 别混淆：Tamashii 还有一条童磨「再贩」listing（2026/11/2 起预约、2027 年 6 月发售），不是 11 月这款。'}
 };
 
+/* 「怎么买 · 条件」分条版：与 BUY[].text 同源（2026/11/8 官方核实），只做分类与分行，不增删事实。
+   折叠态只显示 BUY[].tags 摘要；展开后按 [标题, [条目…]] 渲染，⚠️ 开头的条目单独标红。 */
+var BUY_SECS = {
+'再放送联动 Cafe ～结缘～《无限列车篇》第二期':[
+['📌 先看结论',['东京·名古屋·大阪：事前预约制（LivePocket 抽选）','德岛·北九州：自由入场，不走抽选','另有 ufotable WEBSHOP 通贩']],
+['🗓 抽选流程 · LivePocket（每周循环）',['一次抽选：周三 18:00 – 周四 24:00 申请','结果：周五约 12:00 起，邮件依次通知','二次先着：周一 20:00 起——仅一次抽选出现取消时才有；周一约 16:00 店铺 X 公布，日程可能变动']],
+['🎟 入场规则',['只买周边也要预约','每场开始 30 分钟后，才放物贩客人入场','同一日期每人只能申 1 次；不同日期可各申 1 次；一次抽选已中的场次不能再申']],
+['🪪 证件要求',['入场核对与票面姓名一致的证件','可用：保险证 / 驾照 / 护照 / 学生证','不算：信用卡、存折等私人证件']],
+['💳 限购与付款',['限购：本期未公布固定数字，官方 FAQ 只说「可能设限」','店内付款：现金 / 信用卡 / 交通系电子货币 / 微信支付']],
+['🛒 线上 · WEBSHOP',['期间：10/28 18:00 – 11/24 24:00','形式：库存＋受注混合','限购：未公布']],
+['⚠️ 注意',['⚠️ 官方 FAQ 旧文写一次抽选「周四 18:00 开始」，与预约页对不上——以周三–周四为准']]],
+'宇髄天元诞生祭 2026':[
+['📌 先看结论',['活动页本身没有写购买方式，只列会期、场馆、商品','以下按各场馆的固定制度套用，不是活动页印的规则','官方提醒：可能因拥挤按店调整引导方式']],
+['🏬 按场馆分',['Cafe 东京·名古屋·大阪 ＝ LivePocket 抽选（每周三–周四循环，见总览）','Cafe 德岛·北九州 ＝ 自由入场','DINING / HIROMA / MOCKTAIL BAR GINZA / CHARACTERS Cafe 池袋 ＝ ufotable Ticket 抽选','Cafe TO GO、CINEMA（仅物贩）＝ 店头通常贩售']],
+['🎟 限定渠道',['饮品杯架 ¥2,200：仅 DINING 各店 / TO GO / CINEMA 店头有，且仅店头卖']],
+['🛒 线上 · WEBSHOP',['期间：10/31 10:00 – 11/24 24:00','生日 BOX ¥15,000 为受注生产','限购：未公布']]],
+'AGF2026「Rose garden」（Animate Girls Festival）':[
+['📌 先看结论',['先要有 AGF 本会场门票（无现场售票），ufotable 展位本身不做事前预约','展位拥挤时可能发整理券；另有 WEBSHOP 通贩']],
+['🎟 会场门票 · アニメイトチケット抽选',['前提：必须是 CLUB animate 会员','电子票：MOALA 人脸认证，必须提前登记人脸照片','傍晚票：7-11 纸票，免人脸认证','数量：每人每天 1 张']],
+['🗓 门票时间',['一般抽选：9/14 12:00 – 9/24 23:59 → 10/1 公布 → 10/4 23:59 前付款','二次先着：10/9 12:00 – 11/6 23:59','付款：信用卡或 7-11 店头']],
+['🎟 展位与整理券（仅可能）',['⚠️ 若发券：1 券限购 1 次、按券面时间提前 5 分钟到、遗失不补','原则每人每天 1 券，且不保证买到（可能售罄）','下单：展位入口填点单表','付款：现金 / 信用卡 / 微信支付；不提供购物袋；库存按日分开']],
+['🏬 场外与联动',['Cafe TO GO 2（11/7，Sunshine City Alpa 1F）：LivePocket 完全事前预约制，¥800（含 1 杯饮料＋¥100 手续费），QR 票每人 1 张，不需要 AGF 门票','CHARACTERS Cafe 池袋 AGF 饮料 ¥700：走 ufotable Ticket 完全抽选预约（见总览 🅱）']],
+['🛒 线上 · WEBSHOP',['期间：11/7 10:00 – 11/30 24:00','形式：库存＋受注','限购：未公布']]],
+'鬼袭来再来 2026（ufotable DINING）':[
+['📌 先看结论',['DINING、DINING -HIROMA-、MOCKTAIL BAR GINZA 三店都必须在 ufotable Ticket 事前抽选预约','活动页对每家店都单独写明了这一点']],
+['🗓 抽选时间',['⚠️ 活动页没有公布申请窗口 / 周期 / 公布日，只写「抽選申込は ufotable Ticket で受付中」','具体时间只在 ufotable Ticket 系统内显示']],
+['🪪 门槛与付款',['必须用日本手机号做 SMS 认证：060 / 070 / 080 / 090 开头，不含 IP 电话','中签后 24 小时内付款，逾期自动取消','多人不能合并申请，每人各自申请','三店仅信用卡支付']],
+['🎟 没抽中怎么办',['去 Ticket 里的「空席确认 / 空席预约」页，捡别人取消的位']],
+['🍽 特别场次',['HIROMA 周四·五·六 18:00 场为「鬼袭来 DINING」','两种鬼套餐各 ¥4,000']],
+['🛒 线上 · WEBSHOP',['形式：库存＋受注混合，至 12/16','⚠️ 截止时刻两处写法不同：活动页写 23:59、商城分类页写 24:00','限购：未公布']]],
+'Dialogue Collection DINING ～收集台词的餐厅～':[
+['📌 先看结论',['在 DINING -HIROMA- 等举办，必须先订座','只买周边也要先订座，走 ufotable Ticket 抽选']],
+['🪪 门槛与付款',['规则同「鬼袭来再来」：日本手机号 SMS 认证、24 小时内付款、空席预约捡漏、仅信用卡','⚠️ 本活动页没有印抽选窗口 / 周期']],
+['🎟 店内くじ',['套餐 ¥4,000（含税），含 1 次「お楽しみくじ」','追加抽：1 次 ¥700（10/8 起由 ¥650 涨价），仅限已预约用餐者，售完为止','官方说可能视情况限制抽数，未公布固定上限','抽空一整盒的人得 Last 奖；W 机会奖为带店内台词播放的 B2 海报']]],
+'「捌之章」in Namco 活动':[
+['📌 先看结论',['所有景品都不卖——只能玩抓娃娃机获得','全国 Namco 门店和线上抓娃娃「ナムクレ」都是如此','特典也不是买的，是投币达标送的']],
+['🎟 特典怎么拿',['向对象机台投 ¥500，或在ナムクレ对象展位使用 500 点数，得 1 个随机特典（不可选款，送完为止）','和纸贴纸全 16 种：10/23 起','绘札全 16 种：11/13 起追加']],
+['⚠️ 注意',['⚠️ 投币前必须先叫店员，或先用 Namco App 的 LINK 功能（开蓝牙＋位置 / 相机权限、扫机台 QR）','走 App 的，特典进 App 的「受取 BOX」领取','未公布每人上限；景品与特典均为数量限定','官方 X 转发活动已于 10/22 结束']]],
+'追忆回廊之导 — 博多会场':[
+['📌 先看结论',['11/2 起按计划免预约自由入场','但官方明说视拥挤可能限制入场、发整理券——出发前先查官方 X']],
+['🗓 已结束的开幕预约（10/30–11/1）',['LivePocket 事前预约已结束：免费、需 LivePocket 账号','抽选 10/15 11:00–10/18 23:59 → 10/22 起依次公布 → 10/26 18:00 起先着捡漏','一张预约同时进「追忆回廊＋鬼之栖街」的入场、物贩、小游戏、拍照点','不含 Cafe 角，也不保证小游戏可用和库存；入场核对预约人身份，核对不了可能被拒']],
+['🎟 11/2 起入场',['免预约自由入场为计划','⚠️ 视拥挤可能限制入场、发整理券：出发前查活动官方 X（@kimetsu_ev）/ Cross Store 博多 X','区内也可能按拥挤发内容级整理券']],
+['☕ Cafe 角',['单独按拥挤发整理券，有预约也要另领','可能闭店前就发完']],
+['💳 付款与限购',['周边 / Cafe：现金·信用卡·电子货币（WAON、Suica 等）·Aeon Pay，仅一括付款','小游戏：只收现金','限购：官方页有「購入制限」标题，但正文没给出数字，只说可能中途变更、不接受商品预留 / 留货——别按传闻数字准备']]],
+'鬼之栖街 — 博多会场':[
+['📌 先看结论',['入场 / 购买与同馆「追忆回廊之导」共用一套制度','细则见「追忆回廊 — 博多会场」卡片']],
+['🎟 入场',['10/30–11/1 的 LivePocket 预约期已过','11/2 起自由入场，视拥挤可能发整理券','Cafe 角另行按拥挤发券']],
+['👋 见面会 · 11/15',['「迷你队士 宇髄天元」见面会：12:00 / 13:00 / 14:30 / 15:30，每场约 20–30 分钟','官网没有设门票 / 预约——到时间直接去活动区即可','可以拍迷你队士，但不能合影；禁用自拍杆 / 三脚架','官方保留当日变更或取消的可能']],
+['⚠️ 未核实',['⚠️ 其线上贩售结束时间（11/24 23:00，Premium Bandai）仅见二手信息，官网未直接核实，勿据此做下单决策']]],
+'柿安 Dining「黑毛和牛 无限 牛锅便当」':[
+['📌 先看结论',['三条路径：① WEB 预约（カキヨヤク）② 店头预约 ③ 无预约店头现买','预约是先到先得，不是抽选']],
+['🗓 时间',['预约期：11/2–11/23（WEB 与店头同）','WEB 预约领取：11/27–12/18，其中 11/27·28 是 WEB 专属先行领取','店头预约领取与无预约现买：都从 11/29 开始，店头贩售至 12/18']],
+['🪪 WEB 预约门槛',['⚠️ 首次使用カキヨヤク必须先注册会员＋加「柿安 WEB 予約サービス」LINE 官方账号为好友','预约信息通过 LINE 发送']],
+['🎁 特典',['每份便当带 1 个随机迷你束口袋（全 3 种）','WEB 预约另加 1 个随机亚克力杯垫（全 3 种）——WEB 限定、按领取店数量限定']],
+['⚠️ 注意',['未公布每人限购','禁止转卖目的购买；部分店铺不销售','束口袋送完即结束贩售']]],
+'花丸伎「即美味杯装味噌汤」× 鬼灭之刃':[
+['📌 先看结论',['限定包装就是普通零售：全国超市、量贩店、药妆店直接买','无预约、无抽选，官网未公布限购']],
+['🗓 上架时间',['⚠️ 是「自然切换」出货：官方通知（10/23）写 10 月下旬起陆续发货','上架时间按商品、地区、各店库存都不同，没有统一发售日，第一天跑空不奇怪']],
+['🎁 X 赠奖活动',['第 1 弹：11/1–30，亚克力立牌套装，50 名','第 2 弹：12/1–2027/1/31，联动商品全套礼盒，50 名','合计 100 名']],
+['⚠️ 未公布',['⚠️ 截至 11/8，官方页面还没写参加方法——是否需要关注 / 转发 / 购买凭证都未公布','细节会陆续发在官方 X（@Hanamaruki_PR）和特设站，别先假设']]],
+'景品（游戏中心）11–12月投放':[
+['📌 先看结论',['全部是「アミューズメント専用景品」——游戏中心专用，不能在零售店购买','日期是各厂商的机台投放日；无需门票 / 整理券 / 会员，按次付费玩即可','未公布每人上限']],
+['🗓 11 月投放',['Luminasta 富冈义勇 觉醒：11/20（Sega 官方）','Howa 毛绒 vol.4：11/25（Banpresto）','Grandista 猗窝座 II：11/27（Banpresto）','毛绒镜子 ～炭子·善子·猪子～：Jump 日历只写 11 月、二手厂商信息写 11/19','ぴゅあぬい 1 / 2（再贩）：11 月，无具体日','FuRyu 官方景品页另列 11 月第 4 周：もちぴこマスコット 鎹鴉②、猗窩座拳头毛绒（不在 Jump 日历 11 月页上，按厂商官方信息计入）']],
+['🗓 12 月投放',['FIGURIZMα 甘露寺蜜璃：12/4（Sega 官方）','其余（Grandista 童磨 II、GLITTER & GLAMOURS 叶 / 忍 II、Figueno 善逸・伊之助含 Namco 限定版、ひっかけ钥匙挂钩 祢豆子暂名、ぬいぷりけ系列）：日历只写「12 月」无具体日，以各厂商官网为准']]],
+'Deforme 贴纸威化 其之十六':[
+['📌 先看结论',['普通食玩零售：11/9 起全国量贩店零食区等直接买','¥154（含税，未税 ¥140）','无预约、无抽选、无整理券，官网未公布限购']],
+['📦 内容',['对象年龄 6 岁以上','每包：贴纸 1 枚（全 39 种含秘密款 3 种）＋香草奶油威化 1 枚']],
+['⚠️ 注意',['⚠️ 万代官方提醒：各店实际上架开始日可能不同']]],
+'Jump Festa 2027':[
+['📌 先看结论',['入场免费但邀请制：必须经 Jump NAVI App 申请','进 JF 官方商店还要单独的购物票（事前抽选＋当日抽选）','不去现场也能买：Jump Characters Store 特设站']],
+['🎟 入场票',['小学以上每人都要 Jump NAVI 电子入场票：必须装 App＋免费注册会员','申请时登记人脸照片和个人信息','高中以上没智能手机的人连同行也不能进；初中以下没手机只能作同行者且必须全程跟随','第①轮（数字版订阅者等限定）已截止']],
+['🗓 入场票第②轮（一般）',['申请：11/2 10:00 – 11/16 17:59','公布：11/24 约 9:30','每份申请最多 5 人（含代表）；该轮每天 28,000 名（两轮合计邀请每天 48,000 人）','中签概率随代表与同行者的 Jump NAVI Club 等级（☆0–☆3）提升','第①轮中过同一天的人不能再申第②轮（除非先取消）']],
+['🎟 中签者「事前抽选」',['期间：11/24 10:00 – 11/30 17:59','公布：12/11 约 9:30','范围含超级舞台、原画展和 JF 官方商店购物票']],
+['🛒 JF 商店购物票',['事前抽选只有上午领票时段：①9:00–9:30 ②9:30–10:00 ③10:00–10:30 ④10:30–11:00 ⑤11:00–11:30 ⑥11:30–12:00','⚠️ 领票时间不等于进店时间，贩售队列可能等很久，且不保证买到','下午时段：入场后在 App 内「当日抽选」（开始前 60 分钟开放申请、前 30 分钟截止、前 20 分钟前通知结果，JF 商店的购买时间不可选）','每人每天限用 1 次']],
+['💳 限购（鬼灭两款）',['护身符贴纸收藏 第1弹：限 10','富冈义勇便签：限 2','单品限购按商品不同；会场商店只卖特设站的一部分商品']],
+['🛒 不去现场 · JCS 特设站',['11/24 10:00 开站，需免费注册 JCS 会员','特设站订单 2027 年 1 月下旬起发货（食品除外）','落选 / 不去的人也能买全 JF 商店商品','其中护身符贴纸已确认是抽选贩售：12/16–12/20（会场 12/19–20 同步卖）；其他商品是否同一窗口官网未说明']],
+['⚠️ 已截止',['⚠️ 订阅者最速先行抽选（同款贴纸）已于 11/8 23:58 截止：每人 1 次、每种最多 1 个、全商品同一购物车，11/10 下午邮件公布，12 月中旬发货']]],
+'一番赏 鬼灭之刃 ～兄妹之鬼～':[
+['📌 先看结论',['12/21 起依次开售，1 次 ¥850（含税）','是抽赏（くじ），不是直接购买指定商品']],
+['🏬 销售点',['⚠️ 本弹官方只列一番赏 ONLINE 和一番赏官方商店','没有公布便利店渠道，别按往弹习惯跑便利店']],
+['🛒 线上贩售',['⚠️ 截至 11/8 仍显示「準備中」','开始日期、时间和每人抽数上限都未公布']],
+['🏆 奖项公布情况',['只公开 A 赏：宇髄天元 MASTERLISE（约 26cm）','B–G 赏、Last One 赏、双重机会都仍是「？？？」','售完为止；官方注明可能取消发售或各店日期不同']]],
+'追忆回廊之导 — 横滨会场（下一站巡回）':[
+['📌 先看结论',['⚠️ 横滨的入场 / 预约 / 整理券方式官网尚未公布']],
+['⚠️ 注意',['⚠️ 不要默认套用博多规则（博多的开幕三天用过 LivePocket 预约、之后转自由入场）','本次核查的官方页面只确认了横滨会期（2027/3/19–5/9）和内容与博多同系列','临近时查 Cross Store 横滨公告与活动官方 X（@kimetsu_ev）']]],
+'童磨 无比例手办（受注生产）':[
+['📌 先看结论',['Aniplex Online 下单，受注生产','受理：9/25 12:00 – 12/28 23:59','发货：2027 年 7 月起陆续发货']],
+['⚠️ 下单限制',['⚠️ 本商品不能和其他商品一起加购物车（页面明示）','下单后不能因顾客个人原因取消 / 退货','官方可不经通知取消疑似转卖的订单（同一顾客多账号、或超过「规定数量」等情形）']],
+['💳 限购',['商品页没有印出具体的每人限购数字，只有「規定枚数」的说法，无数值']],
+['🎁 特典与出品',['Aniplex 版带亚克力挂件特典','商品本身由 Claynel 制造，官网明示并非 Aniplex Online 限定']]],
+'舞台「鬼灭之刃」其之陆 BD/DVD':[
+['📌 先看结论',['Animate 通贩等渠道预约受理中（可到店领取）','11/25 发售后转店头通常贩售']],
+['💳 价格（两档）',['完全生产限定版：BD ¥14,080 / DVD ¥12,980','三店限定套装（Animate・Aniplex Online・ufotable，内容相同）：BD ¥14,630 / DVD ¥13,530，多 1 张特典 DVD']],
+['🎁 特典',['Animate 特典：舞台写真明信片套装 B（珠世、愈史郎、产屋敷、无惨、獪岳、童磨），送完为止','剧场会场预约的特典是另一套明信片']],
+['⚠️ 未公布',['⚠️ 官方页与 Animate 商品页都没写预约截止日——开放到发售 / 库存为止','未公布限购']]],
+'2026年11月一般发售新品（Jump 日历）':[
+['📌 先看结论',['都是一般零售新品：在各官方渠道 / 店头直接买','无抽选、无预约门槛','Jump 日历未标渠道限制和限购']],
+['🗓 品目与时间',['樱饼挂件 Vol.5 / Vol.6（Tapioca，各 ¥1,100）：11 月中旬','Look Up 宇髄天元 前音柱 ver.（MegaHouse，¥4,400）：11 月下旬；另有 Look Up 迷你收藏 ¥880 同为 11 月下旬','G.E.M. 掌上义勇【再贩】（¥8,580）：11 月下旬','S.H.Figuarts 童磨（BANDAI SPIRITS，¥11,000）：Tamashii Web 列 2026/11/21 发售、2026/6/1 起曾开预约']],
+['⚠️ 别混淆',['⚠️ Tamashii 还有一条童磨「再贩」listing（2026/11/2 起预约、2027 年 6 月发售），不是 11 月这款']]]
+};
+function buyboxHTML(e){
+var b=BUY[e.t]; if(!b) return '';
+var secs=BUY_SECS[e.t], body='';
+if(secs){
+body=secs.map(function(s){
+var items=s[1].map(function(it){ return '<li'+(it.indexOf('⚠️')===0?' class="warn"':'')+'>'+it+'</li>'; }).join('');
+return '<div class="buy-sec"><h5>'+s[0]+'</h5><ul>'+items+'</ul></div>';
+}).join('');
+}else{
+var parts=b.text.split('。').map(function(x){return x.trim();}).filter(Boolean);
+body='<div class="buy-sec"><ul>'+parts.map(function(p){ return '<li>'+p+'。</li>'; }).join('')+'</ul></div>';
+}
+var sumLine=b.tags.length?b.tags.join(' · '):'查看购买条件';
+return '<details class="buybox"><summary class="buy-head"><span class="buy-title">🎫 怎么买 · 条件</span><span class="buy-hint"><span class="h-closed">点击展开详情</span><span class="h-open">点击收起</span></span><span class="buy-chev" aria-hidden="true">▾</span><span class="buy-sum">'+sumLine+'</span></summary><div class="buy-body">'+body+'</div></details>';
+}
 var LINEUP = {
 '再放送联动 Cafe ～结缘～《无限列车篇》第二期':{count:'全 12 品 · 官方商品页逐项核实',rows:[
 ['無限列車編 第二期「縁」ランダムロング缶バッジ','¥600','随机（ランダム）'],
@@ -636,7 +768,7 @@ return '<article class="card"><h3>'+e.t+'<span class="jp">'+e.jp+'</span></h3><d
 +'<dl><div><dt>时间</dt><dd>'+e.when+'</dd></div><div><dt>地点</dt><dd>'+e.where+'</dd></div></dl>'
 +'<p class="goods">'+e.goods+'</p>'
 +lineupHTML(e)
-+(b?'<div class="buybox"><h4>🎫 怎么买 · 条件</h4><p>'+b.text+'</p></div>':'')
++buyboxHTML(e)
 +(e.note?'<p class="note">※ '+e.note+'</p>':'')
 +'<p class="src"><a href="'+e.url+'" target="_blank" rel="noopener">'+e.urlLabel+' →</a></p></article>';
 }).join('');
