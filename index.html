@@ -135,6 +135,28 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 .lu-posters img:hover,.lu-gallery img:hover,.lu-thumbs img:hover{outline:2px solid var(--teal);outline-offset:1px}
 .lu-posters img:focus-visible,.lu-gallery img:focus-visible,.lu-thumbs img:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 .lu-zoom-hint{font-size:12px;color:var(--teal);font-weight:700;margin:0 0 8px}
+/* poster board — site-generated from official data, styled after official goods-info posters */
+.pboard{border:2px solid #d8c9a8;border-radius:12px;background:#fffdf6;color:#221d18;overflow:hidden;margin:0 0 12px}
+.pb-head{display:flex;gap:10px;align-items:center;background:#26221e;color:#fdf6e3;padding:10px 12px}
+.pb-tt{flex:1;min-width:0}
+.pb-tt b{display:block;font-size:15px;line-height:1.35}
+.pb-tt span{display:block;font-size:11.5px;color:#cfc4ae;margin-top:1px;line-height:1.45}
+.pb-total{flex:0 0 auto;background:#ffd23e;color:#241c10;font-weight:900;font-size:13px;padding:4px 10px;border-radius:8px;white-space:nowrap}
+.pb-gen{background:#fff3cf;border-bottom:1.5px dashed #b98a1c;color:#6b4e08;font-size:12.5px;font-weight:800;text-align:center;padding:7px 10px;line-height:1.55}
+.pb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:8px;padding:10px}
+.pb-cell{border:1.5px solid #e0d3b8;border-radius:10px;background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.pb-name{background:#a52a20;color:#fff;font-size:12.5px;font-weight:700;line-height:1.4;padding:6px 8px}
+.pb-zen{display:inline-block;background:#ffd23e;color:#241c10;border-radius:999px;padding:0 7px;font-size:11px;font-weight:900;margin-left:6px;white-space:nowrap;vertical-align:1px}
+.pb-imgs{display:flex;gap:4px;padding:8px 8px 0}
+.pb-imgs img{flex:1 1 0;min-width:0;width:100%;aspect-ratio:1;object-fit:contain;background:#fff;display:block;border-radius:6px;cursor:zoom-in}
+.pb-imgs img:hover{outline:2px solid var(--teal);outline-offset:1px}
+.pb-imgs img:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.pb-noimg{flex:1;display:flex;align-items:center;justify-content:center;min-height:84px;border:1.5px dashed #cfc2a4;border-radius:6px;color:#8a7c62;font-size:12px;font-weight:700;background:#fbf7ec;text-align:center;padding:6px}
+.pb-price{font-size:19px;font-weight:900;color:#a52a20;padding:6px 8px 0;line-height:1.25;font-variant-numeric:tabular-nums}
+.pb-price small{font-size:11px;color:#8a7c62;font-weight:700}
+.pb-kind{font-size:11.5px;color:#6f6558;line-height:1.5;padding:2px 8px 9px}
+.pb-foot{border-top:1.5px solid #e0d3b8;background:#faf3df;padding:9px 12px;font-size:12.5px;line-height:1.6;display:grid;gap:3px}
+.pb-foot b{color:#a52a20}
 /* lightbox */
 .lightbox{position:fixed;inset:0;z-index:50;background:rgba(12,10,9,.94);display:flex;flex-direction:column;color:#f5efe2}
 .lightbox[hidden]{display:none}
@@ -161,7 +183,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 <header class="hero">
 <h1>鬼灭之刃 · 日本周边活动</h1>
 <p class="jp-sub">鬼滅の刃 — 日本グッズ販売・イベント一覧（2026年11月8日時点）</p>
-<p class="lede">场贩与通贩分开追踪：线下会场、店铺、联动咖啡与线上受注分开列。每张卡片除了购买方式与条件，<strong>再补上官方「商品一览」</strong>——逐项日文商品名、含税价格、是否随机／盲抽、种类与限购（官网有写才写）；<strong>官方商品一览图直接嵌在对应活动卡里（官方发几张就放几张），有官方单品图的商品在明细行前配了图——点任意一张商品图即可放大看大图</strong>，图片均为 2026年11月8日自官方页取得的本站保存副本；官方没有一览图、单品图未取到、只把清单放在图片里文字读不到的，以及官方尚未公布的，都在卡片里明说，不拿转述补齐。主体条目均以官方网站为准核实；官网未明示的逐项标注，未确认的单独列入「未确认」区，不当结论用。</p>
+<p class="lede">场贩与通贩分开追踪：线下会场、店铺、联动咖啡与线上受注分开列。每张卡片除了购买方式与条件，<strong>再补上官方「商品一览」</strong>——逐项日文商品名、含税价格、是否随机／盲抽、种类与限购（官网有写才写）；<strong>官方商品一览图直接嵌在对应活动卡里（官方发几张就放几张），有官方单品图的商品在明细行前配了图——点任意一张商品图即可放大看大图</strong>；官方未发这种合并海报的活动，卡内另按官方公布数据生成了同版式的「海报式一览板」（顶部活动名＋期间＋总数、每商品一格：名称／图片／大字价格／种类徽章、底部购买摘要），<strong>板内显著标注「本站整理生成 · 非官方海报」</strong>，格内无官方单品图的写「暂无单品图」、价格未公布的写「价格未公布」，不臆补；图片均为 2026年11月8日自官方页取得的本站保存副本；官方没有一览图、单品图未取到、只把清单放在图片里文字读不到的，以及官方尚未公布的，都在卡片里明说，不拿转述补齐。主体条目均以官方网站为准核实；官网未明示的逐项标注，未确认的单独列入「未确认」区，不当结论用。</p>
 <div class="meta-row">
 <span class="pill">📅 数据截至 2026年11月8日（日）JST</span>
 <span class="pill hot">● AGF2026 今天最后一天</span>
@@ -239,7 +261,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 
 <section aria-labelledby="ev-h">
 <h2 id="ev-h">活动与贩售一览</h2>
-<p class="sub">第一排按场贩 / 通贩筛，第二排按<strong>购买方式</strong>筛；每张卡的深色标签是购买方式，浅色框「怎么买 · 条件」是抽选时间、证件 / 会员门槛、限购与官方没写明的部分，卡片下方的<strong>「📦 商品一览」点开就是官方逐项清单</strong>（商品名＋价格＋嵌在卡内的官方一览图与行首单品图，<strong>点图可看大图</strong>），搜索框也能搜到商品名。状态包含进行中、即将开始与明天发售。已结束的放在页面下方单独一节，避免误认。</p>
+<p class="sub">第一排按场贩 / 通贩筛，第二排按<strong>购买方式</strong>筛；每张卡的深色标签是购买方式，浅色框「怎么买 · 条件」是抽选时间、证件 / 会员门槛、限购与官方没写明的部分，卡片下方的<strong>「📦 商品一览」点开就是官方逐项清单</strong>（商品名＋价格＋嵌在卡内的官方一览图与行首单品图，<strong>点图可看大图</strong>）；官方有合并海报的用官方原图，没有的在清单顶部有一块本站按官方数据生成的海报式一览板（已标注非官方），搜索框也能搜到商品名。状态包含进行中、即将开始与明天发售。已结束的放在页面下方单独一节，避免误认。</p>
 <div class="filters" role="group" aria-label="筛选">
 <button class="chip" data-f="all" aria-pressed="true">全部</button>
 <button class="chip" data-f="venue" aria-pressed="false">🏬 场贩 / 店头</button>
@@ -324,7 +346,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 </div>
 </section>
 
-<footer>来源：ufotable、Aniplex、万代南梦宫、集英社 Jump Festa / Jump 日历、柿安本店（PR Times 发布）、花丸伎等日本官方页面，2026年11月8日核查。购买方式另据 ufotable Cafe 预约页 / FAQ、ufotable Ticket 指南与 SMS 认证公告、AGF2026 官方票务页、Jump Festa 入场 / 抽选指南、Jump Characters Store 商品页、柿安官网商品页等官方页面逐项核对；商品一览另据 ufotable Cafe 商品页、宇髄天元诞生祭与 AGF2026 官方页、Namco 活动页与 Banpresto Navi、Cross Store 特设站商品／小游戏页、万代食玩商品页、Sega Plaza 景品页、Jump Festa 官方商店、1kuji 官方商品页、Aniplex Online 商品页、舞台官网 BD/DVD 页、柿安与花丸伎官网逐项核对，卡片内的官方一览图与单品图均为上述官方页实际使用的图片、于 2026年11月8日取得并保存在本站的副本；未取到或对应未确认的图片不配图、不臆配；官网未公布的窗口、限购、价格与参加方法均按「未公布 / 未明示 / 未确认」标注，未作推测。价格均为含税日元（花丸伎为オープン価格、官方未定价）。非官方汇总站（collabo-cafe.com）仅作发现线索，未用作依据。</footer>
+<footer>来源：ufotable、Aniplex、万代南梦宫、集英社 Jump Festa / Jump 日历、柿安本店（PR Times 发布）、花丸伎等日本官方页面，2026年11月8日核查。购买方式另据 ufotable Cafe 预约页 / FAQ、ufotable Ticket 指南与 SMS 认证公告、AGF2026 官方票务页、Jump Festa 入场 / 抽选指南、Jump Characters Store 商品页、柿安官网商品页等官方页面逐项核对；商品一览另据 ufotable Cafe 商品页、宇髄天元诞生祭与 AGF2026 官方页、Namco 活动页与 Banpresto Navi、Cross Store 特设站商品／小游戏页、万代食玩商品页、Sega Plaza 景品页、Jump Festa 官方商店、1kuji 官方商品页、Aniplex Online 商品页、舞台官网 BD/DVD 页、柿安与花丸伎官网逐项核对，卡片内的官方一览图与单品图均为上述官方页实际使用的图片、于 2026年11月8日取得并保存在本站的副本；未取到或对应未确认的图片不配图、不臆配；卡内「海报式一览板」为本站参照官方商品情报海报版式、按官方公布数据整理生成的 HTML 版式，非官方海报，已在板内标注，板中商品名／价格／种类与官方逐项清单一致，无图无价处如实标注；官网未公布的窗口、限购、价格与参加方法均按「未公布 / 未明示 / 未确认」标注，未作推测。价格均为含税日元（花丸伎为オープン価格、官方未定价）。非官方汇总站（collabo-cafe.com）仅作发现线索，未用作依据。</footer>
 </div>
 <div class="checkband" aria-hidden="true"></div>
 
@@ -536,11 +558,41 @@ var ROWIMG={
 '一番赏 鬼灭之刃 ～兄妹之鬼～':{0:['kuji-a.webp']},
 '童磨 无比例手办（受注生产）':{0:['doma-main.jpg'],1:['doma-tokuten.jpg']}
 };
+/* Rule (user-set): if the official site provides a combined lineup poster, use the
+   official original only — never add a site-generated board beside it. Events whose
+   card already shows official combined / set-overview imagery are listed here and
+   get NO generated board: Namco (景品／特典 ALL 一览图), 鬼袭来再来 (官方「みにきゃら」
+   一览图 PC＋手机版), 贴纸威化 (官方图库成套图). All other events were re-checked:
+   their in-card official images are single-product shots, key visuals, banners or
+   promo art — not a combined lineup — so they keep their generated board. */
+var OFFICIAL_BOARD={'「捌之章」in Namco 活动':1,'鬼袭来再来 2026（ufotable DINING）':1,'Deforme 贴纸威化 其之十六':1};
+function pbPrice(p){
+if(p==='未确认'||p==='未定价'||p==='？？？') return '价格未公布';
+if(p.indexOf('¥')>-1) return p+'<small>（税込）</small>';
+return p;
+}
+function boardHTML(e){
+var L=LINEUP[e.t]; if(!L||!L.rows.length||OFFICIAL_BOARD[e.t]) return '';
+var RI=ROWIMG[e.t]||{};
+var cells=L.rows.map(function(r,i){
+var media=RI[i]?RI[i].map(function(f){ return '<img src="'+GDIR+f+'" alt="'+r[0]+' 官方商品图" loading="lazy">'; }).join(''):'<div class="pb-noimg">暂无单品图</div>';
+var m=(r[2]||'').match(/(?:^|[·・；;]\s*)(全\s*\d+\s*种)/);
+var badge=m?'<span class="pb-zen">'+m[1].replace(/\s/g,'')+'</span>':'';
+return '<div class="pb-cell"><div class="pb-name">'+r[0]+badge+'</div><div class="pb-imgs">'+media+'</div><div class="pb-price">'+pbPrice(r[1])+'</div>'+(r[2]?'<div class="pb-kind">'+r[2]+'</div>':'')+'</div>';
+}).join('');
+var b=BUY[e.t];
+var buyLine=b&&b.tags.length?b.tags.join(' · '):'见下方「怎么买 · 条件」';
+return '<div class="pboard"><div class="pb-head"><div class="pb-tt"><b>'+e.t+'</b><span>'+e.when+'</span></div><span class="pb-total">共 '+L.rows.length+' 项</span></div>'
++'<div class="pb-gen">本站整理生成 · 非官方海报 — 版式参照官方商品情报海报，商品名／价格／种类均来自官方公布（2026/11/8 核实）</div>'
++'<div class="pb-grid">'+cells+'</div>'
++'<div class="pb-foot"><div><b>期间</b> '+e.when+'</div><div><b>场所</b> '+e.where+'</div><div><b>购买</b> '+buyLine+'（细则见下方「怎么买 · 条件」与一览注记）</div></div></div>';
+}
 function lineupHTML(e){
 var L=LINEUP[e.t]; if(!L) return '';
-var h='<details class="lineup"><summary>📦 商品一览（官方） <span>'+L.count+'</span></summary><div class="lu-body">';
-var _ri0=ROWIMG[e.t]||{}; var _hasImg=!!(POSTERS[e.t]||GALLERY[e.t]||Object.keys(_ri0).length);
+var h='<details class="lineup"><summary>📦 商品一览（官方数据） <span>'+L.count+'</span></summary><div class="lu-body">';
+var _ri0=ROWIMG[e.t]||{}; var _bd=boardHTML(e); var _hasImg=!!(POSTERS[e.t]||GALLERY[e.t]||Object.keys(_ri0).length||_bd);
 if(_hasImg) h+='<p class="lu-zoom-hint">🔍 点任意一张图可放大看大图（同卡内可左右切换）</p>';
+if(_bd) h+=_bd;
 var P=POSTERS[e.t];
 if(P){ h+='<div class="lu-posters">'+P.map(function(p){ return '<figure><img src="'+GDIR+p[0]+'" alt="'+p[1]+'" loading="lazy"><figcaption>'+p[1]+'</figcaption></figure>'; }).join('')+'</div>'; }
 var GA=GALLERY[e.t];
@@ -590,7 +642,7 @@ return '<article class="card"><h3>'+e.t+'<span class="jp">'+e.jp+'</span></h3><d
 }).join('');
 countEl.textContent='显示 '+list.length+' / '+EVENTS.length+' 条（截至 2026年11月8日核实）';
 emptyEl.style.display=list.length?'none':'block';
-grid.querySelectorAll('.lu-posters img,.lu-gallery img,.lu-thumbs img').forEach(function(im){
+grid.querySelectorAll('.lu-posters img,.lu-gallery img,.lu-thumbs img,.pb-imgs img').forEach(function(im){
 im.setAttribute('tabindex','0'); im.setAttribute('role','button');
 im.setAttribute('title','点击查看大图');
 var _a=im.getAttribute('alt')||'商品图'; im.setAttribute('aria-label','查看大图：'+_a);
@@ -622,7 +674,7 @@ lbStage.classList.remove('zoomed'); lbStage.scrollTop=0; lbStage.scrollLeft=0;
 }
 function lbOpen(imgEl){
 var card=imgEl.closest('.card'); var scope=card||document;
-var imgs=Array.prototype.slice.call(scope.querySelectorAll('.lu-posters img,.lu-gallery img,.lu-thumbs img'));
+var imgs=Array.prototype.slice.call(scope.querySelectorAll('.lu-posters img,.lu-gallery img,.lu-thumbs img,.pb-imgs img'));
 if(!imgs.length) imgs=[imgEl];
 lbList=imgs.map(function(im){ return {src:im.getAttribute('src'), alt:im.getAttribute('alt')||''}; });
 lbIdx=Math.max(0,imgs.indexOf(imgEl));
@@ -639,11 +691,11 @@ if(lbReturnFocus&&lbReturnFocus.focus) lbReturnFocus.focus();
 function lbStep(d){ if(lbList.length<2) return; lbIdx=(lbIdx+d+lbList.length)%lbList.length; lbShow(); }
 grid.addEventListener('click',function(ev){
 var t=ev.target;
-if(t&&t.matches&&t.matches('.lu-posters img,.lu-gallery img,.lu-thumbs img')) lbOpen(t);
+if(t&&t.matches&&t.matches('.lu-posters img,.lu-gallery img,.lu-thumbs img,.pb-imgs img')) lbOpen(t);
 });
 grid.addEventListener('keydown',function(ev){
 var t=ev.target;
-if((ev.key==='Enter'||ev.key===' ')&&t&&t.matches&&t.matches('.lu-posters img,.lu-gallery img,.lu-thumbs img')){ ev.preventDefault(); lbOpen(t); }
+if((ev.key==='Enter'||ev.key===' ')&&t&&t.matches&&t.matches('.lu-posters img,.lu-gallery img,.lu-thumbs img,.pb-imgs img')){ ev.preventDefault(); lbOpen(t); }
 });
 document.getElementById('lbClose').addEventListener('click',lbCloseFn);
 lbPrev.addEventListener('click',function(){ lbStep(-1); });
