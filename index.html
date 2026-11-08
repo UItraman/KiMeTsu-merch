@@ -117,6 +117,19 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 .lu-price small{display:block;color:var(--muted);font-weight:500;font-size:11.5px}
 .lu-note{font-size:12.5px;color:var(--muted);margin:8px 0 0}
 .lu-imgs{font-size:12.5px;margin:8px 0 0;display:flex;flex-wrap:wrap;gap:6px 14px}
+/* embedded official images */
+.lu-posters{display:grid;gap:10px;margin:0 0 10px}
+.lu-posters figure{margin:0}
+.lu-posters img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:#fff}
+.lu-posters figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+.lu-gallery{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.lu-gallery figure{margin:0;flex:1 1 30%;min-width:88px}
+.lu-gallery img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border:1px solid var(--line);border-radius:8px;background:#fff}
+.lu-gallery figcaption{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.35}
+.lu-row{align-items:center}
+.lu-thumbs{display:flex;gap:4px;flex:0 1 auto;flex-wrap:wrap;max-width:236px}
+.lu-thumbs img{width:54px;height:54px;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:#fff;display:block}
+.lu-row .lu-main{flex:1;min-width:120px}
 </style>
 </head>
 <body>
@@ -125,7 +138,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 <header class="hero">
 <h1>鬼灭之刃 · 日本周边活动</h1>
 <p class="jp-sub">鬼滅の刃 — 日本グッズ販売・イベント一覧（2026年11月8日時点）</p>
-<p class="lede">场贩与通贩分开追踪：线下会场、店铺、联动咖啡与线上受注分开列。每张卡片除了购买方式与条件，<strong>本次更新再补上官方「商品一览」</strong>——逐项日文商品名、含税价格、是否随机／盲抽、种类与限购（官网有写才写），并附官方商品一览图的直链；官方只把清单放在图片里、文字读不到的，以及官方尚未公布的，都在卡片里明说，不拿转述补齐。主体条目均以官方网站为准核实；官网未明示的逐项标注，未确认的单独列入「未确认」区，不当结论用。</p>
+<p class="lede">场贩与通贩分开追踪：线下会场、店铺、联动咖啡与线上受注分开列。每张卡片除了购买方式与条件，<strong>再补上官方「商品一览」</strong>——逐项日文商品名、含税价格、是否随机／盲抽、种类与限购（官网有写才写）；<strong>官方商品一览图直接嵌在对应活动卡里（官方发几张就放几张），有官方单品图的商品在明细行前配了图</strong>，图片均为 2026年11月8日自官方页取得的本站保存副本；官方没有一览图、单品图未取到、只把清单放在图片里文字读不到的，以及官方尚未公布的，都在卡片里明说，不拿转述补齐。主体条目均以官方网站为准核实；官网未明示的逐项标注，未确认的单独列入「未确认」区，不当结论用。</p>
 <div class="meta-row">
 <span class="pill">📅 数据截至 2026年11月8日（日）JST</span>
 <span class="pill hot">● AGF2026 今天最后一天</span>
@@ -203,7 +216,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 
 <section aria-labelledby="ev-h">
 <h2 id="ev-h">活动与贩售一览</h2>
-<p class="sub">第一排按场贩 / 通贩筛，第二排按<strong>购买方式</strong>筛；每张卡的深色标签是购买方式，浅色框「怎么买 · 条件」是抽选时间、证件 / 会员门槛、限购与官方没写明的部分，卡片下方的<strong>「📦 商品一览」点开就是官方逐项清单</strong>（商品名＋价格＋官方图链接），搜索框也能搜到商品名。状态包含进行中、即将开始与明天发售。已结束的放在页面下方单独一节，避免误认。</p>
+<p class="sub">第一排按场贩 / 通贩筛，第二排按<strong>购买方式</strong>筛；每张卡的深色标签是购买方式，浅色框「怎么买 · 条件」是抽选时间、证件 / 会员门槛、限购与官方没写明的部分，卡片下方的<strong>「📦 商品一览」点开就是官方逐项清单</strong>（商品名＋价格＋嵌在卡内的官方一览图与行首单品图），搜索框也能搜到商品名。状态包含进行中、即将开始与明天发售。已结束的放在页面下方单独一节，避免误认。</p>
 <div class="filters" role="group" aria-label="筛选">
 <button class="chip" data-f="all" aria-pressed="true">全部</button>
 <button class="chip" data-f="venue" aria-pressed="false">🏬 场贩 / 店头</button>
@@ -288,7 +301,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 </div>
 </section>
 
-<footer>来源：ufotable、Aniplex、万代南梦宫、集英社 Jump Festa / Jump 日历、柿安本店（PR Times 发布）、花丸伎等日本官方页面，2026年11月8日核查。购买方式另据 ufotable Cafe 预约页 / FAQ、ufotable Ticket 指南与 SMS 认证公告、AGF2026 官方票务页、Jump Festa 入场 / 抽选指南、Jump Characters Store 商品页、柿安官网商品页等官方页面逐项核对；商品一览另据 ufotable Cafe 商品页、宇髄天元诞生祭与 AGF2026 官方页、Namco 活动页与 Banpresto Navi、Cross Store 特设站商品／小游戏页、万代食玩商品页、Sega Plaza 景品页、Jump Festa 官方商店、1kuji 官方商品页、Aniplex Online 商品页、舞台官网 BD/DVD 页、柿安与花丸伎官网逐项核对，卡片内的「官方商品图」均为上述官方页实际使用的图片直链；官网未公布的窗口、限购、价格与参加方法均按「未公布 / 未明示 / 未确认」标注，未作推测。价格均为含税日元（花丸伎为オープン価格、官方未定价）。非官方汇总站（collabo-cafe.com）仅作发现线索，未用作依据。</footer>
+<footer>来源：ufotable、Aniplex、万代南梦宫、集英社 Jump Festa / Jump 日历、柿安本店（PR Times 发布）、花丸伎等日本官方页面，2026年11月8日核查。购买方式另据 ufotable Cafe 预约页 / FAQ、ufotable Ticket 指南与 SMS 认证公告、AGF2026 官方票务页、Jump Festa 入场 / 抽选指南、Jump Characters Store 商品页、柿安官网商品页等官方页面逐项核对；商品一览另据 ufotable Cafe 商品页、宇髄天元诞生祭与 AGF2026 官方页、Namco 活动页与 Banpresto Navi、Cross Store 特设站商品／小游戏页、万代食玩商品页、Sega Plaza 景品页、Jump Festa 官方商店、1kuji 官方商品页、Aniplex Online 商品页、舞台官网 BD/DVD 页、柿安与花丸伎官网逐项核对，卡片内的官方一览图与单品图均为上述官方页实际使用的图片、于 2026年11月8日取得并保存在本站的副本；未取到或对应未确认的图片不配图、不臆配；官网未公布的窗口、限购、价格与参加方法均按「未公布 / 未明示 / 未确认」标注，未作推测。价格均为含税日元（花丸伎为オープン価格、官方未定价）。非官方汇总站（collabo-cafe.com）仅作发现线索，未用作依据。</footer>
 </div>
 <div class="checkband" aria-hidden="true"></div>
 
@@ -363,8 +376,8 @@ var LINEUP = {
 ['無限列車編 第二期「ありがとう」ランダム57mm缶バッジB','¥550','随机'],
 ['無限列車編 第二期「好き」ランダムチェキ風ブロマイド','¥440','随机 · 店头 11/10 起追加'],
 ['無限列車編 第二期「ありがとう」ランダムチェキ風ブロマイドA','¥440','随机 · 店头 11/10 起追加'],
-['無限列車編 第二期「ありがとう」ランダムチェキ風ブロマイドB','¥440','随机 · 店头 11/10 起追加；本品官方图直链本次未取到，未猜测链接']],
-note:'限购：商品页未记载。来源：ufotable Cafe 官方商品页（全 12 品）。',imgs:[['官方页首图','https://www.ufotable.co.jp/cafe/wp-content/uploads/2026/10/4582711966883.webp'],['随机长徽章图','https://www.ufotable.co.jp/cafe/wp-content/uploads/2026/10/4582711966890.webp'],['立牌「上弦の参」图','https://www.ufotable.co.jp/cafe/wp-content/uploads/2026/10/4582711966906.webp']]},
+['無限列車編 第二期「ありがとう」ランダムチェキ風ブロマイドB','¥440','随机 · 店头 11/10 起追加']],
+note:'限购：商品页未记载。本活动官方无合并一览海报图，商品页为逐品列表——全 12 品的官方单品图已按页面顺序配在各行行首。来源：ufotable Cafe 官方商品页（全 12 品）。'},
 '宇髄天元诞生祭 2026':{count:'全 7 品 ＋ 参考 1 品 · 官方活动页逐项核实',rows:[
 ['立体ステージアクリルスタンド','¥3,200','店头＋WEB'],
 ['ロゼット（玫瑰结）','¥1,500','店头＋WEB'],
@@ -374,7 +387,7 @@ note:'限购：商品页未记载。来源：ufotable Cafe 官方商品页（全
 ['ダイカットステッカー（模切贴纸）','200pt 兑换','积分景品、非贩售；兑换至 2027/8/29，MOCKTAIL BAR GINZA 除外'],
 ['お誕生日BOX（WEBSHOP 限定・受注）','¥15,000','内含诞生祭周边全 4 点（立体立牌／玫瑰结／发夹／明信片册）＋BOX 特典全息亚克力票＋包装缎带'],
 ['シアター・パスポート（影院护照手帐 · 参考）','¥1,800','同页记载的常设贩售品，非诞生祭限定']],
-note:'限购：商品页未记载；各种类数页内未标「全 X 种」，按各 1 种计。来源：ufotable 官方活动页。',imgs:[['立体立牌图','https://www.ufotable.co.jp/kimetsu/event/BD/kmt_uzuiBD_2026/_assets/images/items/4582711961932.webp?1794137026000'],['生日 BOX 图','https://www.ufotable.co.jp/kimetsu/event/BD/kmt_uzuiBD_2026/_assets/images/items/4582711961994.webp?1794137026000']]},
+note:'限购：商品页未记载；各种类数页内未标「全 X 种」，按各 1 种计。本活动官方无合并一览海报图——前 7 品的官方单品图已配在各行行首（最后一行「影院护照手帐」为参考品，无诞生祭单品图）。来源：ufotable 官方活动页。'},
 'AGF2026「Rose garden」（Animate Girls Festival）':{count:'全 9 品 · 仅 3 品价格经官方页实读确认',rows:[
 ['ランダムアクリルスタンド（アーチ付き）','¥1,000','随机；图内含炭治郎・善逸・炼狱・义勇・天元・忍 6 名角色（官方未以文字标「全 6 种」）'],
 ['ランダムハートマット缶バッジ','¥550','随机；心形徽章，种数文字读不到（图片转录）'],
@@ -385,10 +398,10 @@ note:'限购：商品页未记载；各种类数页内未标「全 X 种」，�
 ['アンティーク風ステッカーセット','未确认','同上'],
 ['ブック型マルチケース','未确认','同上'],
 ['【WEBSHOP限定】一緒に読書セット','未确认','WEBSHOP 限定（标签明示），价格未读到']],
-note:'后 6 品的价格／种类／尺寸／限购未取到——官方页商品区为标签切换式图片，未用海外官方店价格推算（海外店同名立牌标 ¥1,100，与日本页 ¥1,000 不一致）。会场特典：单笔满 ¥10,000 赠会场限定无纺布袋 1 枚。来源：ufotable AGF2026 官方页（实读）。',imgs:[['随机立牌图','https://www.ufotable.co.jp/agf_2026/img/goods/4582711966210.webp'],['会场特典图','https://www.ufotable.co.jp/agf_2026/img/goods/novelty.webp']]},
+note:'后 6 品的价格／种类／尺寸／限购未取到——官方页商品区为标签切换式图片，未用海外官方店价格推算（海外店同名立牌标 ¥1,100，与日本页 ¥1,000 不一致）。单品图：前 2 品已取到并配在行首（随机商品的单品图本身即该商品的全种一览图），其余 7 品本次未逐一取得，行首不配图。会场特典：单笔满 ¥10,000 赠会场限定无纺布袋 1 枚（特典图见上方）。来源：ufotable AGF2026 官方页（实读）。'},
 '鬼袭来再来 2026（ufotable DINING）':{count:'官方未以文字公布逐项清单',rows:[
 ['鬼コースメニュー（夜间套餐，HIROMA 周四·五·六）','¥4,000','附特典：垫餐纸 全 5 种随机 ＋ 杯垫 全 1 种']],
-note:'⚠️ 官方页「イベント関連グッズ」区只有筛选式界面，商品名／价格／尺寸没有出现在页面文字里，本次无法逐项确认——不采用非官方汇总站的转录表。要逐项核对，请打开 ufotable WEBSHOP 的分类「鬼襲来再来＆無限城編第一章 繋がるイラストグッズ（在庫・受注）」逐品看。右为官方页实际使用的主题插画图直链。来源：ufotable 官方活动页。',imgs:[['官方主题插画图','https://www.ufotable.co.jp/kimetsu/event/demonspickup/return2026/img/sozai/minichara.webp'],['同图（手机版）','https://www.ufotable.co.jp/kimetsu/event/demonspickup/return2026/img/sozai/minichara_sp.webp']]},
+note:'⚠️ 官方页「イベント関連グッズ」区只有筛选式界面，商品名／价格／尺寸没有出现在页面文字里，本次无法逐项确认——不采用非官方汇总站的转录表。要逐项核对，请打开 ufotable WEBSHOP 的分类「鬼襲来再来＆無限城編第一章 繋がるイラストグッズ（在庫・受注）」逐品看。商品区为动态加载，各单品图本次未取得，行首不配图；上方两张为官方页实际使用的「みにきゃら」一览图。来源：ufotable 官方活动页。'},
 'Dialogue Collection DINING ～收集台词的餐厅～':{count:'无独立商品贩售清单',rows:[
 ['Dialogue Collection 套餐（用餐）','¥4,000','含 1 次「お楽しみくじ」'],
 ['お楽しみくじ 追加 1 次','¥700','仅限已预约用餐者；2026/10/8 起由 ¥650 涨价，售完为止']],
@@ -399,22 +412,22 @@ note:'本活动官方未公布独立的周边商品一览表——消费形态�
 ['ちびぐるみ vol.1／vol.2 ～捌ノ章 in ナムコ～','景品','合计全 8 种 · 约 11cm · 抓娃娃机获得'],
 ['ナムコ限定特典 和紙ステッカー','投入特典','全 16 种（通常 8＋烫金 8）· 约 6×6cm 以内 · 对象机台投 ¥500／ナムクレ 500pt 每回随机 1 个（10/23～）'],
 ['ナムコ限定特典 絵札','投入特典','全 16 种（通常 8＋烫金 8）· 约 6×9cm · 同上条件，11/13 起追加，图案不可选']],
-note:'来源：万代南梦宫活动页 ＋ Banpresto Navi 官方作品页（同 4 品、2026/10/23 登场）。下方为官方页实际使用的商品一览图直链。',imgs:[['景品 ALL 图','https://bandainamco-am.co.jp/common/event/game_center/kimetsu2026/assets/images/7_kimetsu_prize_ALLsquare_1006.jpg'],['特典 ALL 图','https://bandainamco-am.co.jp/common/event/game_center/kimetsu2026/assets/images/8_kimetsu_tokuten_ALLsquare_1006.jpg'],['徽章图','https://bandainamco-am.co.jp/common/event/game_center/kimetsu2026/assets/images/1_kimetsu_badge_1006.jpg'],['Q 版毛绒图','https://bandainamco-am.co.jp/common/event/game_center/kimetsu2026/assets/images/3_kimetsu_mascot_1006.jpg']]},
+note:'来源：万代南梦宫活动页 ＋ Banpresto Navi 官方作品页（同 4 品、2026/10/23 登场）。上方两张为官方页的景品／特典 ALL 一览图，各行行首为该商品的全种集合图。官方页另有一张文件名含「rare」的图，页面未标明对应商品，未配对使用。'},
 '追忆回廊之导 — 博多会场':{count:'原创周边仅图片公布 · 小游戏景品已文字确认',rows:[
 ['炭治郎のがんばれ！！ガラポン（小游戏 1 次）','¥700','景品：A 赏 亚克力视觉板／B 赏 亚克力砖／C 赏 徽章／D 赏 视觉贴纸（不可单独购买）'],
 ['研ぎあげろ！研鑽指導（小游戏 1 次）','¥700','景品：A 赏 卡包／B 赏 亚克力片立牌／C 赏 徽章／D 赏 视觉贴纸（不可单独购买）'],
 ['目ェかっぴらけェ！瞬発稽古（小游戏 1 次）','¥800','参加赏：亚克力钥匙扣']],
-note:'⚠️ 原创周边（オリジナルグッズ）的商品名／价格只印在官方图片里，文字层读不到，本次未转录、未猜测——请直接打开下方 3 张官方商品图看清单。特设站页注：价格均为含税、图案可选、不参加线上贩售；部分商品曾于 2026/7/1–8/17 在 Premium Bandai 贩售（东京会期，已结束）。博多页的「購入制限・在庫状況」区本次未展开具体数值。来源：Cross Store 特设站商品页／小游戏页、博多官方告知。',imgs:[['会场别限定商品图','https://event.bandainamco-am.co.jp/cx/kimetsu2026_06/images/goods/item/limited_i.png'],['選べる！商品图','https://event.bandainamco-am.co.jp/cx/kimetsu2026_06/images/goods/item/select_i.png'],['纪念钥匙扣图','https://event.bandainamco-am.co.jp/cx/kimetsu2026_06/images/goods/item/limited.png'],['博多告知图','https://bandainamco-am.co.jp/images/crossstore/store/news/hakata-canalcity/20260511_kimetsu2026_06.jpg']]},
+note:'⚠️ 原创周边（オリジナルグッズ）的商品名／价格只印在官方图片里，文字层读不到，本次未转录、未猜测；商品页其余单品图为懒加载系列，与商品的对应未逐一确认，不硬配对——上方只放已确认对应的 2 张官方商品图。小游戏景品图已确认对应，配在各小游戏行行首（A–D 赏依次排列）。特设站页注：价格均为含税、图案可选、不参加线上贩售；部分商品曾于 2026/7/1–8/17 在 Premium Bandai 贩售（东京会期，已结束）。博多页的「購入制限・在庫状況」区本次未展开具体数值。来源：Cross Store 特设站商品页／小游戏页、博多官方告知。'},
 '鬼之栖街 — 博多会场':{count:'仅 2 品价格经官方贩售渠道确认',rows:[
 ['-鬼之棲街- アクリルスタンド','¥1,200','数量限定 · Premium Bandai「ナムコパークス」特集确认'],
 ['-鬼之棲街- 箔押しアクリルスタンド','¥2,100','数量限定 · 同上确认'],
 ['ジャンボうちわ／アクリル製小物入れ／ネックストラップ（アクリルチャームつき）等','未确认','同特集有列名，本次未取到各价']],
-note:'⚠️ 特设站商品页同为图片型：缶バッジコレクション、クリアカードコレクション、ネームバッジコレクション、キャンディ風キーホルダー等品名与价格未能从官方文字层逐项核实，不混入确认清单；小游戏「糸を辿れ！鬼御籤」景品（亚克力板 全 8 种等）同理未逐项确认。购入特典：店头相关商品单笔满 ¥3,000 赠「ねこ型イラストシート（全 8 种）」1 枚。线上贩售：Premium Bandai 2026/9/2 12:00–11/24 23:00 左右（线上不附猫型插画纸特典）。⚠️ 纠正：鬼之棲街没有横滨会场——会场只有池袋 NAMJATOWN（已结束）＋博多；横滨的是「追憶回廊ノ導」。来源：特设站、博多告知、Premium Bandai 特集。',imgs:[['博多告知图','https://bandainamco-am.co.jp/images/crossstore/store/news/hakata-canalcity/20260706_kimetsu_hakata.jpg']]},
+note:'⚠️ 特设站商品页同为图片型：缶バッジコレクション、クリアカードコレクション、ネームバッジコレクション、キャンディ風キーホルダー等品名与价格未能从官方文字层逐项核实，不混入确认清单；小游戏「糸を辿れ！鬼御籤」景品（亚克力板 全 8 种等）同理未逐项确认。图片：官方商品一览海报图未确认存在，9 品的单品图因 Premium Bandai 商品页访问受限（403）未取得，行首不配图；上方为两个会场的官方主视觉图。购入特典：店头相关商品单笔满 ¥3,000 赠「ねこ型イラストシート（全 8 种）」1 枚。线上贩售：Premium Bandai 2026/9/2 12:00–11/24 23:00 左右（线上不附猫型插画纸特典）。⚠️ 纠正：鬼之棲街没有横滨会场——会场只有池袋 NAMJATOWN（已结束）＋博多；横滨的是「追憶回廊ノ導」。来源：特设站、博多告知、Premium Bandai 特集。'},
 '柿安 Dining「黑毛和牛 无限 牛锅便当」':{count:'单品 · 官方商品页确认',rows:[
 ['『黒毛和牛 無限 牛鍋弁当』（オリジナルミニ巾着付き）','¥2,681','套装内容＝便当＋原创迷你束口袋 1 个；挂纸为新设计 2 种'],
 ['特典 オリジナルミニ巾着','随餐附赠','全 3 种（炭治郎・炼狱・猗窝座）随机 1 个／每份便当；尺寸 宽 11cm×长 15cm'],
 ['WEB 予約限定特典 オリジナルアクリルコースター','随餐附赠','全 3 种随机 1 个 · 数量限定 · 仅 WEB 预约']],
-note:'限购：商品页未记载。来源：柿安本店官方新闻＋商品页。下方为官方新闻页实际图片直链。',imgs:[['便当主图','https://www.kakiyasuhonten.co.jp/files/news/Press/souzai/2026/2611kimetsu_7release.jpg'],['束口袋图','https://www.kakiyasuhonten.co.jp/files/news/Press/souzai/2026/2611kimetsu_7release_kintyaku.jpg'],['杯垫图','https://www.kakiyasuhonten.co.jp/files/news/Press/souzai/2026/2611kimetsu_7release_akurirukosuta.jpg'],['商品页主图','https://www.kakiyasuhonten.co.jp/files/itemcorp/01_sozai/kakiyasu_dining/2026/2611kimetsu_7th/2611kimetsu7_contents-1.jpg']]},
+note:'限购：商品页未记载。本品官方无合并一览海报——各行行首即官方图：便当行依次为商品主图、掛け紙 2 种集合图、商品页掛け紙单图 2 张。来源：柿安本店官方新闻＋商品页。'},
 '花丸伎「即美味杯装味噌汤」× 鬼灭之刃':{count:'限定包装全 6 种 · 官方未定价',rows:[
 ['すぐ旨カップみそ汁 あげなす（炸茄子）','未定价','包装角色：竈門炭治郎・冨岡義勇（ufotable 新绘）'],
 ['すぐ旨カップみそ汁 ほうれん草（菠菜）','未定价','包装角色：竈門炭治郎'],
@@ -422,7 +435,7 @@ note:'限购：商品页未记载。来源：柿安本店官方新闻＋商品�
 ['すぐ旨カップみそ汁 とろろ昆布（山药昆布）','未定价','包装角色：嘴平伊之助'],
 ['すぐ旨カップみそ汁 海苔あおさ（海苔青海菜）','未定价','包装角色：冨岡義勇'],
 ['すぐ旨カップみそ汁 長ねぎ（长葱）','未定价','包装角色：胡蝶しのぶ']],
-note:'⚠️ 价格：官方未公布定价——新闻稿未记价格，同系列既有商品为「オープン価格（开放价格）」口径，本联动稿未改记，故不填具体金额。来源：花丸伎官方新闻＋特设站；下方为官方口味图直链示例。',imgs:[['主视觉图','https://www.hanamaruki.co.jp/files/4fe850a8530d865ccbe10873c1f2237835eaece2.jpg'],['あげなす 图','https://www.hanamaruki.co.jp/files/suguuma_01agenasu_260623_02.jpg'],['とん汁 图','https://www.hanamaruki.co.jp/files/suguuma_06tonjiru_260623_02.jpg']]},
+note:'⚠️ 价格：官方未公布定价——新闻稿未记价格，同系列既有商品为「オープン価格（开放价格）」口径，本联动稿未改记，故不填具体金额。图片：限定包装全 6 种的单品图未取得（特设站为 JS 构成，未提取到独立包装图），行首不配图；上方为特设站官方宣传主图与官网横幅图。来源：花丸伎官方新闻＋特设站。'},
 '景品（游戏中心）11–12月投放':{count:'官方单品页已确认：11 月 4 品 ＋ 12 月 2 品 · 均为景品、无售价',rows:[
 ['Luminasta ‐冨岡義勇‐覚醒（Sega）','景品','2026/11/20～ · 全 1 种 · 全长约 16×15cm'],
 ['ぬいぐるミラー ～炭子・善子・猪子～（Banpresto）','景品','2026/11/19～ · 种类／尺寸官方标题页未确认'],
@@ -430,33 +443,33 @@ note:'⚠️ 价格：官方未公布定价——新闻稿未记价格，同系�
 ['Grandista -AKAZA- II（Banpresto）','景品','2026/11/27～ · 全 1 种 · 约 23cm'],
 ['FIGURIZMα ‐甘露寺蜜璃‐（Sega）','景品','2026/12/4～ · 全 1 种 · 全长约 13×21cm'],
 ['Grandista -DOMA- II（Banpresto）','景品','2026 年 12 月（具体日未定）· 种类／尺寸未确认']],
-note:'来源：Banpresto Navi 官方作品页／单品页、Sega Plaza 单品页。⚠️ 上方卡片概要里 Jump 日历记载的其余 12 月品目（GLITTER＆GLAMOURS、Figuno 等）截至 11/8 在官方单品页未检索到，未列入本确认清单；12 月景品之后可能还有官方发表。FuRyu 等其他厂商 11–12 月鬼灭景品未检索到官方发表。',imgs:[['Grandista 猗窩座 II 图','https://bsp-prize.jp/files_thumbnail/%E5%85%B1%E6%9C%89%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80/item/2026.11/bae/2834946_a.jpg/500w_500h.jpg']]},
+note:'来源：Banpresto Navi 官方作品页／单品页、Sega Plaza 单品页。景品无合并一览图——6 品的官方主图已配在各行行首（Grandista 童磨 II 的图取自 Grandista 系列页阵容图，其单品页尚未挂图）。⚠️ 上方卡片概要里 Jump 日历记载的其余 12 月品目（GLITTER＆GLAMOURS、Figuno 等）截至 11/8 在官方单品页未检索到，未列入本确认清单；12 月景品之后可能还有官方发表。FuRyu 等其他厂商 11–12 月鬼灭景品未检索到官方发表。'},
 'Deforme 贴纸威化 其之十六':{count:'单品 · 万代官方商品页确认',rows:[
 ['にふぉるめーしょん 鬼滅の刃ディフォルメシールウエハース 其ノ十六','¥154','厂商希望零售价：未税 ¥140；2026/11/9 发售；对象年龄 6 岁以上'],
 ['内容物：シール 1 枚','随包封入','全 39 种（うちシークレット 3 种）随机封入；全阵容均为超级稀有以上，含 5 周年纪念稀有度「5th レア」'],
 ['内容物：バニラクリーム味ウエハース 1 枚','随包封入','贴纸尺寸：本页未记载（Premium Bandai BOX 稿记约 H52×W52mm，未在本页核实，仅作参考）']],
-note:'限购：商品页未记载。来源：万代官方商品页（JAN 4570117934162）。下方为该页实际图片直链。',imgs:[['商品图 1','https://www.bandai.co.jp/candy/published/bnc_files/product/D2x/000000494498mkcN5EEB2Wgs7QPxw1hxOIisiclFm3I4RD2x.jpg'],['商品图 2','https://www.bandai.co.jp/candy/published/bnc_files/product/iGV/000000494502WHwlkt0TZrwl7TGMcN5vPnoaV5gD6TDh3iGV.jpg']]},
+note:'限购：商品页未记载。来源：万代官方商品页（JAN 4570117934162）。上方为该页官方图库全部 10 张：全 39 种贴纸以集合图形式呈现，官方没有逐种单品图；图 2–10 的具体内容官方未逐张标注，不硬分派。'},
 'Jump Festa 2027':{count:'鬼灭仅 2 品 · 官方商店全表逐行核查',rows:[
 ['『鬼滅の刃』お守りステッカーコレクション 第1弾','¥880','全 16 种 · 随机 2 种入 · 盲抽规格 · 限购 10'],
 ['『鬼滅の刃』冨岡義勇の「俺は嫌われてない」メモ','¥1,980','非随机 · 限购 2']],
-note:'贩售：会场 2026/12/19・20（需购物票）；JCS 特设站抽选贩售 2026/12/16–20（特设站 11/24 10:00 公开，2027 年 1 月下旬起发货）。贴纸另有订阅者最速先行抽选：¥880、受理已于 2026/11/8 23:58 截止，2026 年 12 月中旬发货，每人 1 次、各种最多 1 个。来源：Jump Festa 官方商店页及各商品详情页、JCS 商品页。',imgs:[['贴纸收藏图','https://www.jumpfesta.com/uploads/shop/1_34.jpg'],['义勇便签图','https://www.jumpfesta.com/uploads/shop/1_35.jpg']]},
+note:'贩售：会场 2026/12/19・20（需购物票）；JCS 特设站抽选贩售 2026/12/16–20（特设站 11/24 10:00 公开，2027 年 1 月下旬起发货）。贴纸另有订阅者最速先行抽选：¥880、受理已于 2026/11/8 23:58 截止，2026 年 12 月中旬发货，每人 1 次、各种最多 1 个。来源：Jump Festa 官方商店页及各商品详情页、JCS 商品页。本活动无合并一览图——2 品的官方主图（Jump Characters Store 商品页图库首图）已配在各行行首。'},
 '一番赏 鬼灭之刃 ～兄妹之鬼～':{count:'仅 A 赏已公布 · 其余官方未公布',rows:[
 ['A賞 宇髄天元 MASTERLISE','1 次 ¥850','全 1 种 · 约 26cm'],
 ['B賞 ／ C賞 ／ D賞 ／ E賞 ／ F賞 ／ G賞','？？？','官方未公布'],
 ['ラストワン賞 ／ ダブルチャンスキャンペーン','？？？','官方未公布']],
-note:'⚠️ 除 A 赏外，官方商品页话题栏 B 赏以后全部标「？？？」——官方尚未公布完整商品一览，不要按传闻补齐。店头 2026/12/21 起依次发售，1 次 ¥850（含税 10%）；取扱店为一番赏 ONLINE 与一番赏官方商店（线上贩售准备中）。来源：1kuji 官方商品页。',imgs:[['主视觉图','https://assets.1kuji.com/uploads/product/top_banner/10802/7fbd4ee1-93dd-422e-95ad-fb0c4e7dab83.webp'],['A 赏图','https://assets.1kuji.com/uploads/product_item/image/107547/1ed285fd-0589-4088-9b4c-778395b47ea0.webp']]},
+note:'⚠️ 除 A 赏外，官方商品页话题栏 B 赏以后全部标「？？？」——官方尚未公布完整商品一览，不要按传闻补齐，也没有全赏一览图与 B 赏以后的单品图。A 赏官方图已配在行首，上方为官方页首横幅图。店头 2026/12/21 起依次发售，1 次 ¥850（含税 10%）；取扱店为一番赏 ONLINE 与一番赏官方商店（线上贩售准备中）。来源：1kuji 官方商品页。'},
 '追忆回廊之导 — 横滨会场（下一站巡回）':{count:'横滨专属一览尚未公布',rows:[],
 note:'横滨会期（2027/3/19–5/9）的商品一览官方尚未单独公布。本系列的官方商品图与小游戏景品见博多会场卡片的「商品一览」（同一特设站），但不要默认横滨的贩售品目、限购与入场方式与博多完全相同，临近时以 Cross Store 横滨公告为准。'},
 '童磨 无比例手办（受注生产）':{count:'单品 · Aniplex Online 商品页确认',rows:[
 ['アニメ「鬼滅の刃」童磨 ノンスケールフィギュア','¥6,800','无比例 · 涂装完成品 · PVC＆ABS · 全高约 166mm（含椅子）· 原型／彩色：株式会社イクリエ · 发售／贩售元：クレーネル'],
 ['Aniplex Online 限定特典 アクリルチャーム（童磨）','随单附赠','官网明示：本商品并非 Aniplex Online 限定商品，特典为该渠道限定']],
-note:'限购：商品页未记载（仅有转卖对策注记）。受注 2026/9/25 12:00–12/28 23:59，2027 年 7 月起依次发货。来源：Aniplex Online 官方商品页。',imgs:[['手办主图','https://online.aniplex.co.jp/on/demandware.static/-/Sites-all-master-catalog/ja_JP/dw04f3638a/items/title-K/kimetsu/FGR/4-non_scale/douuma/4571452944083_1.jpg'],['特典图','https://online.aniplex.co.jp/on/demandware.static/-/Sites-all-master-catalog/ja_JP/dwd8ba2c15/items/title-K/kimetsu/FGR/4-non_scale/douuma/douma_tokuten.jpg']]},
+note:'限购：商品页未记载（仅有转卖对策注记）。受注 2026/9/25 12:00–12/28 23:59，2027 年 7 月起依次发货。本品无一览图——手办主图与特典图已配在各行行首（同页图库另有多角度图，本页只取主图）。来源：Aniplex Online 官方商品页。'},
 '舞台「鬼灭之刃」其之陆 BD/DVD':{count:'全 4 形态 · 仅完全生产限定版 · 舞台官网确认',rows:[
 ['Blu-ray 完全生産限定版','¥14,080','未税 ¥12,800 · ANZX-10374〜10376 · 3 枚组（本编 BD 阪本奨悟回 约 146 分＋髙橋颯回 约 144 分＋特典 BD）'],
 ['DVD 完全生産限定版','¥12,980','未税 ¥11,800 · ANZB-10374〜10376 · 3 枚组（同构成 DVD）'],
 ['Blu-ray アニメイト・アニプレックス オンライン・ufotable限定セット','¥14,630','未税 ¥13,300 · 完全生产限定版 BD＋特典 DVD'],
 ['DVD 同限定セット','¥13,530','未税 ¥12,300 · 完全生产限定版 DVD＋特典 DVD']],
-note:'2026/11/25 发售。封入特典：三方背盒、数字封套、特制小册子、本编全景影像观看序列号（期限 2029/12/31）；特典碟含幕后约 86 分、K-Musical Market 全景约 40 分、特别谢幕约 8 分、歌唱场景别角度约 42 分；限定套装特典 DVD（三渠道同内容）约 28 分＋约 5 分＋初日采访会约 19 分。店铺购入特典为舞台写真明信片套装：Animate＝套装 B（珠世・愈史郎・産屋敷耀哉・鬼舞辻無惨・獪岳・童磨）；套装 A（炭治郎 阪本／髙橋・祢豆子・善逸・伊之助）与 B 的各店铺完整分配官方文字未完全展开（页内注「絵柄などの詳細は追ってお知らせ」）。会场预约特典为另一套别角度明信片套装（9 名）。来源：舞台官网 BD/DVD 页、Animate 通贩商品页。',imgs:[['封套图','https://kimetsu.com/stage/2026/assets/img/bddvd/jk.jpg']]},
+note:'2026/11/25 发售。封入特典：三方背盒、数字封套、特制小册子、本编全景影像观看序列号（期限 2029/12/31）；特典碟含幕后约 86 分、K-Musical Market 全景约 40 分、特别谢幕约 8 分、歌唱场景别角度约 42 分；限定套装特典 DVD（三渠道同内容）约 28 分＋约 5 分＋初日采访会约 19 分。店铺购入特典为舞台写真明信片套装：Animate＝套装 B（珠世・愈史郎・産屋敷耀哉・鬼舞辻無惨・獪岳・童磨）；套装 A（炭治郎 阪本／髙橋・祢豆子・善逸・伊之助）与 B 的各店铺完整分配官方文字未完全展开（页内注「絵柄などの詳細は追ってお知らせ」）。会场预约特典为另一套别角度明信片套装（9 名）。来源：舞台官网 BD/DVD 页、Animate 通贩商品页。上方封套图为官网该页唯一图片；店铺特典图官方注明详情日后公布，截至核查时未放图。'},
 '2026年11月一般发售新品（Jump 日历）':{count:'一般零售新品 · 出自 Jump 日历 2026 年 11 月页',rows:[
 ['さくら餅マスコット Vol.5／Vol.6（Tapioca）','各 ¥1,100','11 月中旬'],
 ['Look Up 宇髄天元 前音柱 ver.（MegaHouse）','¥4,400','11 月下旬；另有 Look Up 迷你收藏 ¥880 同为 11 月下旬'],
@@ -464,10 +477,45 @@ note:'2026/11/25 发售。封入特典：三方背盒、数字封套、特制小
 ['S.H.Figuarts 童磨（BANDAI SPIRITS）','¥11,000','2026 年 11 月（Tamashii Web 列 11/21 发售）']],
 note:'本组出自集英社官方 Jump 日历，本次商品一览核查未逐项在各厂商商品页复核，渠道与限购以各厂商／店头公布为准。另：ufotable WEBSHOP 截至 11/8 的鬼灭受注分类除本页已列的 AGF／诞生祭／再放送 Cafe／鬼袭来外，仅另见游戏《ヒノカミ血風譚2》（非周边）与「再放送記念 WEBSHOP くじ」——该くじ的赏品明细未在官方文字层展开，标注未确认；万圣节 2026 周边的 WEBSHOP 受注已于 11/2 24:00 结束，不属受注中。'}
 };
+var GDIR='assets/goods/';
+var POSTERS={
+'AGF2026「Rose garden」（Animate Girls Festival）':[['agf-novelty.webp','会场特典图：AGF2026 会场限定无纺布袋（非商品一览图；本活动官方无「全商品一张」海报，商品区为逐品标签图，前 2 品单品图见下方行首）']],
+'鬼袭来再来 2026（ufotable DINING）':[['oni-minichara.webp','官方「みにきゃら」一览图（PC 版）· ufotable 官方活动页'],['oni-minichara-sp.webp','官方「みにきゃら」一览图（手机版）']],
+'「捌之章」in Namco 活动':[['namco-prize-all.jpg','官方一览图 1：景品 ALL 一览 · 万代南梦宫活动页'],['namco-tokuten-all.jpg','官方一览图 2：特典 ALL 一览 · 万代南梦宫活动页']],
+'追忆回廊之导 — 博多会场':[['cross-limited.png','官方商品图：記念キーホルダー（会場別限定商品）· Cross Store 特设站商品页'],['cross-img1.png','官方单品图：アクリルスタンド（原创周边）· 同商品页']],
+'鬼之栖街 — 博多会场':[['sumika-hakata.jpg','博多会场官方主视觉图（非商品一览海报；本活动官方未确认有商品一览图，单品图未取得——Premium Bandai 访问受限）'],['sumika-ikebukuro.jpg','池袋 NAMJATOWN 官方主视觉图（该会期已结束）']],
+'花丸伎「即美味杯装味噌汤」× 鬼灭之刃':[['hana-promo.png','特设站官方宣传主图（限定包装全 6 种的单品图未取得）'],['hana-banner.png','花丸伎官网首页 PICK UP 横幅图「すぐ旨×鬼滅」']],
+'一番赏 鬼灭之刃 ～兄妹之鬼～':[['kuji-banner.webp','官方页首横幅图（非全赏一览图；B 赏以后官方未公布，无一览图）']],
+'舞台「鬼灭之刃」其之陆 BD/DVD':[['stage-jacket.jpg','官方封套图（舞台官网 BD/DVD 页唯一图片；各店铺特典图官方尚未公布）']]
+};
+var GALLERY={
+'Deforme 贴纸威化 其之十六':[['wafer-01.jpg','图 1 · 包装主图'],['wafer-02.jpg','图 2 · 官方图库（内容未逐张标注）'],['wafer-03.jpg','图 3 · 官方图库'],['wafer-04.jpg','图 4 · 官方图库'],['wafer-05.jpg','图 5 · 官方图库'],['wafer-06.jpg','图 6 · 官方图库'],['wafer-07.jpg','图 7 · 官方图库'],['wafer-08.jpg','图 8 · 官方图库'],['wafer-09.jpg','图 9 · 官方图库'],['wafer-10.jpg','图 10 · 官方图库']]
+};
+var ROWIMG={
+'再放送联动 Cafe ～结缘～《无限列车篇》第二期':{0:['cafe-01.webp'],1:['cafe-02.webp'],2:['cafe-03.webp'],3:['cafe-04.webp'],4:['cafe-05.webp'],5:['cafe-06.webp'],6:['cafe-07.webp'],7:['cafe-08.webp'],8:['cafe-09.webp'],9:['cafe-10.webp'],10:['cafe-11.webp'],11:['cafe-12.webp']},
+'宇髄天元诞生祭 2026':{0:['uzui-01.webp'],1:['uzui-02.webp'],2:['uzui-03.webp'],3:['uzui-04.webp'],4:['uzui-05.webp'],5:['uzui-06.webp'],6:['uzui-07.webp']},
+'AGF2026「Rose garden」（Animate Girls Festival）':{0:['agf-01.webp'],1:['agf-02.webp']},
+'「捌之章」in Namco 活动':{0:['namco-badge.jpg'],1:['namco-acsta.jpg'],2:['namco-mascot.jpg'],3:['namco-sticker.jpg'],4:['namco-efuda.jpg']},
+'追忆回廊之导 — 博多会场':{0:['cross-mg1-a.png','cross-mg1-b.png','cross-mg1-c.png','cross-mg1-d.png'],1:['cross-mg2-a.png','cross-mg2-b.png','cross-mg2-c.png','cross-mg2-d.png'],2:['cross-mg3-sanka.png']},
+'柿安 Dining「黑毛和牛 无限 牛锅便当」':{0:['kakiyasu-main.jpg','kakiyasu-kakegami.jpg','kakiyasu-kakegami1.jpg','kakiyasu-kakegami2.jpg'],1:['kakiyasu-kintyaku.jpg'],2:['kakiyasu-coaster.jpg']},
+'景品（游戏中心）11–12月投放':{0:['prize-luminasta.webp'],1:['prize-mirror.jpg'],2:['prize-howanui.jpg'],3:['prize-akaza.jpg'],4:['prize-mitsuri.webp'],5:['prize-doma.jpg']},
+'Deforme 贴纸威化 其之十六':{0:['wafer-01.jpg']},
+'Jump Festa 2027':{0:['jf-sticker.jpg'],1:['jf-memo.jpg']},
+'一番赏 鬼灭之刃 ～兄妹之鬼～':{0:['kuji-a.webp']},
+'童磨 无比例手办（受注生产）':{0:['doma-main.jpg'],1:['doma-tokuten.jpg']}
+};
 function lineupHTML(e){
 var L=LINEUP[e.t]; if(!L) return '';
 var h='<details class="lineup"><summary>📦 商品一览（官方） <span>'+L.count+'</span></summary><div class="lu-body">';
-L.rows.forEach(function(r){ h+='<div class="lu-row"><b>'+r[0]+(r[2]?'<small>'+r[2]+'</small>':'')+'</b><span class="lu-price">'+r[1]+'</span></div>'; });
+var P=POSTERS[e.t];
+if(P){ h+='<div class="lu-posters">'+P.map(function(p){ return '<figure><img src="'+GDIR+p[0]+'" alt="'+p[1]+'" loading="lazy"><figcaption>'+p[1]+'</figcaption></figure>'; }).join('')+'</div>'; }
+var GA=GALLERY[e.t];
+if(GA){ h+='<div class="lu-gallery">'+GA.map(function(p){ return '<figure><img src="'+GDIR+p[0]+'" alt="'+p[1]+'" loading="lazy"><figcaption>'+p[1]+'</figcaption></figure>'; }).join('')+'</div>'; }
+var RI=ROWIMG[e.t]||{};
+L.rows.forEach(function(r,i){
+var th='';
+if(RI[i]){ th='<span class="lu-thumbs">'+RI[i].map(function(f){ return '<img src="'+GDIR+f+'" alt="'+r[0]+' 官方商品图" loading="lazy">'; }).join('')+'</span>'; }
+h+='<div class="lu-row">'+th+'<b class="lu-main">'+r[0]+(r[2]?'<small>'+r[2]+'</small>':'')+'</b><span class="lu-price">'+r[1]+'</span></div>'; });
 if(L.note) h+='<p class="lu-note">'+L.note+'</p>';
 if(L.imgs&&L.imgs.length){ h+='<p class="lu-imgs">'+L.imgs.map(function(im){ return '<a href="'+im[1]+'" target="_blank" rel="noopener">🖼 '+im[0]+' ↗</a>'; }).join('')+'</p>'; }
 return h+'</div></details>';
