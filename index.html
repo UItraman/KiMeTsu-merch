@@ -217,7 +217,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 <div class="stats">
 <button type="button" class="stat stat-link" data-stat="venue11" aria-label="查看进行中的 11 个场贩活动列表"><b>11</b><span>进行中的场贩 / 店头活动</span><span class="stat-go">点击查看列表 ↓</span></button>
 <button type="button" class="stat stat-link" data-stat="online5" aria-label="查看受注中的 5 个通贩列表"><b>5</b><span>受注中的通贩（ufotable 4 + Aniplex 1）</span><span class="stat-go">点击查看列表 ↓</span></button>
-<div class="stat"><b>11/24</b><span>最近的通贩截止日（两项同日）</span></div>
+<button type="button" class="stat stat-link" data-stat="deadline1124" aria-label="查看 11 月 24 日截止的 2 个活动列表"><b>11/24</b><span>最近的通贩截止日（两项同日）</span><span class="stat-go">点击查看列表 ↓</span></button>
 <button type="button" class="stat stat-link" data-stat="future2" aria-label="查看已公布的 2 个大型后续活动列表"><b>2</b><span>已公布的大型后续：Jump Festa、一番赏</span><span class="stat-go">点击查看列表 ↓</span></button>
 </div>
 </header>
@@ -744,9 +744,10 @@ var curFilter='all', curMethod='all', curStat=null;
 var STAT_SETS={
 venue11:['再放送联动 Cafe ～结缘～《无限列车篇》第二期','宇髄天元诞生祭 2026','AGF2026「Rose garden」（Animate Girls Festival）','鬼袭来再来 2026（ufotable DINING）','Dialogue Collection DINING ～收集台词的餐厅～','「捌之章」in Namco 活动','追忆回廊之导 — 博多会场','鬼之栖街 — 博多会场','柿安 Dining「黑毛和牛 无限 牛锅便当」','花丸伎「即美味杯装味噌汤」× 鬼灭之刃','景品（游戏中心）11–12月投放'],
 online5:['再放送联动 Cafe ～结缘～《无限列车篇》第二期','宇髄天元诞生祭 2026','AGF2026「Rose garden」（Animate Girls Festival）','鬼袭来再来 2026（ufotable DINING）','童磨 无比例手办（受注生产）'],
-future2:['Jump Festa 2027','一番赏 鬼灭之刃 ～兄妹之鬼～']
+future2:['Jump Festa 2027','一番赏 鬼灭之刃 ～兄妹之鬼～'],
+deadline1124:['再放送联动 Cafe ～结缘～《无限列车篇》第二期','宇髄天元诞生祭 2026']
 };
-var STAT_LABELS={venue11:'进行中的场贩 / 店头活动（11 个）',online5:'受注中的通贩（5 个）',future2:'已公布的大型后续活动（2 个）'};
+var STAT_LABELS={venue11:'进行中的场贩 / 店头活动（11 个）',online5:'受注中的通贩（5 个）',future2:'已公布的大型后续活动（2 个）',deadline1124:'11/24 截止的通贩（2 个）'};
 function clearStatUI(){
 document.querySelectorAll('.stat-link').forEach(function(x){x.classList.remove('active');x.removeAttribute('aria-current')});
 var bar=document.getElementById('statBar'); if(bar) bar.hidden=true;
