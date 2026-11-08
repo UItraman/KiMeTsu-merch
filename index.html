@@ -130,6 +130,29 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 .lu-thumbs{display:flex;gap:4px;flex:0 1 auto;flex-wrap:wrap;max-width:236px}
 .lu-thumbs img{width:54px;height:54px;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:#fff;display:block}
 .lu-row .lu-main{flex:1;min-width:120px}
+/* clickable images — tap / click to view large */
+.lu-posters img,.lu-gallery img,.lu-thumbs img{cursor:zoom-in}
+.lu-posters img:hover,.lu-gallery img:hover,.lu-thumbs img:hover{outline:2px solid var(--teal);outline-offset:1px}
+.lu-posters img:focus-visible,.lu-gallery img:focus-visible,.lu-thumbs img:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.lu-zoom-hint{font-size:12px;color:var(--teal);font-weight:700;margin:0 0 8px}
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(12,10,9,.94);display:flex;flex-direction:column;color:#f5efe2}
+.lightbox[hidden]{display:none}
+.lb-top{display:flex;align-items:center;gap:10px;padding:10px 14px;flex:0 0 auto}
+.lb-count{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;opacity:.85}
+.lb-close{margin-left:auto;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.lb-close:hover{background:rgba(255,255,255,.18)}
+.lb-stage{flex:1;min-height:0;overflow:auto;display:flex;align-items:center;justify-content:center;padding:4px 14px;-webkit-overflow-scrolling:touch}
+.lb-stage img{max-width:min(96vw,1100px);max-height:calc(100dvh - 168px);width:auto;height:auto;object-fit:contain;display:block;background:#fff;border-radius:10px;cursor:zoom-in}
+.lb-stage.zoomed{align-items:flex-start;justify-content:flex-start}
+.lb-stage.zoomed img{max-width:none;max-height:none;cursor:zoom-out}
+.lb-cap{flex:0 0 auto;padding:8px 18px 4px;font-size:14px;line-height:1.55;text-align:center;max-width:860px;margin:0 auto}
+.lb-hint{flex:0 0 auto;text-align:center;font-size:12px;opacity:.65;margin:0;padding:2px 16px 12px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(20,18,17,.55);color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-nav:hover{background:rgba(255,255,255,.18)}
+.lb-prev{left:10px}.lb-next{right:10px}
+.lb-nav[hidden]{display:none}
+@media(max-width:640px){.lb-nav{width:40px;height:40px;font-size:22px}.lb-prev{left:6px}.lb-next{right:6px}.lb-stage img{max-height:calc(100dvh - 178px)}}
 </style>
 </head>
 <body>
@@ -138,7 +161,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 <header class="hero">
 <h1>鬼灭之刃 · 日本周边活动</h1>
 <p class="jp-sub">鬼滅の刃 — 日本グッズ販売・イベント一覧（2026年11月8日時点）</p>
-<p class="lede">场贩与通贩分开追踪：线下会场、店铺、联动咖啡与线上受注分开列。每张卡片除了购买方式与条件，<strong>再补上官方「商品一览」</strong>——逐项日文商品名、含税价格、是否随机／盲抽、种类与限购（官网有写才写）；<strong>官方商品一览图直接嵌在对应活动卡里（官方发几张就放几张），有官方单品图的商品在明细行前配了图</strong>，图片均为 2026年11月8日自官方页取得的本站保存副本；官方没有一览图、单品图未取到、只把清单放在图片里文字读不到的，以及官方尚未公布的，都在卡片里明说，不拿转述补齐。主体条目均以官方网站为准核实；官网未明示的逐项标注，未确认的单独列入「未确认」区，不当结论用。</p>
+<p class="lede">场贩与通贩分开追踪：线下会场、店铺、联动咖啡与线上受注分开列。每张卡片除了购买方式与条件，<strong>再补上官方「商品一览」</strong>——逐项日文商品名、含税价格、是否随机／盲抽、种类与限购（官网有写才写）；<strong>官方商品一览图直接嵌在对应活动卡里（官方发几张就放几张），有官方单品图的商品在明细行前配了图——点任意一张商品图即可放大看大图</strong>，图片均为 2026年11月8日自官方页取得的本站保存副本；官方没有一览图、单品图未取到、只把清单放在图片里文字读不到的，以及官方尚未公布的，都在卡片里明说，不拿转述补齐。主体条目均以官方网站为准核实；官网未明示的逐项标注，未确认的单独列入「未确认」区，不当结论用。</p>
 <div class="meta-row">
 <span class="pill">📅 数据截至 2026年11月8日（日）JST</span>
 <span class="pill hot">● AGF2026 今天最后一天</span>
@@ -216,7 +239,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 
 <section aria-labelledby="ev-h">
 <h2 id="ev-h">活动与贩售一览</h2>
-<p class="sub">第一排按场贩 / 通贩筛，第二排按<strong>购买方式</strong>筛；每张卡的深色标签是购买方式，浅色框「怎么买 · 条件」是抽选时间、证件 / 会员门槛、限购与官方没写明的部分，卡片下方的<strong>「📦 商品一览」点开就是官方逐项清单</strong>（商品名＋价格＋嵌在卡内的官方一览图与行首单品图），搜索框也能搜到商品名。状态包含进行中、即将开始与明天发售。已结束的放在页面下方单独一节，避免误认。</p>
+<p class="sub">第一排按场贩 / 通贩筛，第二排按<strong>购买方式</strong>筛；每张卡的深色标签是购买方式，浅色框「怎么买 · 条件」是抽选时间、证件 / 会员门槛、限购与官方没写明的部分，卡片下方的<strong>「📦 商品一览」点开就是官方逐项清单</strong>（商品名＋价格＋嵌在卡内的官方一览图与行首单品图，<strong>点图可看大图</strong>），搜索框也能搜到商品名。状态包含进行中、即将开始与明天发售。已结束的放在页面下方单独一节，避免误认。</p>
 <div class="filters" role="group" aria-label="筛选">
 <button class="chip" data-f="all" aria-pressed="true">全部</button>
 <button class="chip" data-f="venue" aria-pressed="false">🏬 场贩 / 店头</button>
@@ -304,6 +327,15 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 <footer>来源：ufotable、Aniplex、万代南梦宫、集英社 Jump Festa / Jump 日历、柿安本店（PR Times 发布）、花丸伎等日本官方页面，2026年11月8日核查。购买方式另据 ufotable Cafe 预约页 / FAQ、ufotable Ticket 指南与 SMS 认证公告、AGF2026 官方票务页、Jump Festa 入场 / 抽选指南、Jump Characters Store 商品页、柿安官网商品页等官方页面逐项核对；商品一览另据 ufotable Cafe 商品页、宇髄天元诞生祭与 AGF2026 官方页、Namco 活动页与 Banpresto Navi、Cross Store 特设站商品／小游戏页、万代食玩商品页、Sega Plaza 景品页、Jump Festa 官方商店、1kuji 官方商品页、Aniplex Online 商品页、舞台官网 BD/DVD 页、柿安与花丸伎官网逐项核对，卡片内的官方一览图与单品图均为上述官方页实际使用的图片、于 2026年11月8日取得并保存在本站的副本；未取到或对应未确认的图片不配图、不臆配；官网未公布的窗口、限购、价格与参加方法均按「未公布 / 未明示 / 未确认」标注，未作推测。价格均为含税日元（花丸伎为オープン価格、官方未定价）。非官方汇总站（collabo-cafe.com）仅作发现线索，未用作依据。</footer>
 </div>
 <div class="checkband" aria-hidden="true"></div>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="图片大图查看">
+<div class="lb-top"><span class="lb-count" id="lbCount"></span><button class="lb-close" id="lbClose" type="button" aria-label="关闭大图">✕</button></div>
+<div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+<button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="上一张">‹</button>
+<button class="lb-nav lb-next" id="lbNext" type="button" aria-label="下一张">›</button>
+<p class="lb-cap" id="lbCap"></p>
+<p class="lb-hint">点图片可再放大看细节，再点还原 · ← → 切换 · Esc 关闭</p>
+</div>
 
 <script>
 var BASE = new Date('2026-11-08T00:00:00+09:00');
@@ -507,6 +539,8 @@ var ROWIMG={
 function lineupHTML(e){
 var L=LINEUP[e.t]; if(!L) return '';
 var h='<details class="lineup"><summary>📦 商品一览（官方） <span>'+L.count+'</span></summary><div class="lu-body">';
+var _ri0=ROWIMG[e.t]||{}; var _hasImg=!!(POSTERS[e.t]||GALLERY[e.t]||Object.keys(_ri0).length);
+if(_hasImg) h+='<p class="lu-zoom-hint">🔍 点任意一张图可放大看大图（同卡内可左右切换）</p>';
 var P=POSTERS[e.t];
 if(P){ h+='<div class="lu-posters">'+P.map(function(p){ return '<figure><img src="'+GDIR+p[0]+'" alt="'+p[1]+'" loading="lazy"><figcaption>'+p[1]+'</figcaption></figure>'; }).join('')+'</div>'; }
 var GA=GALLERY[e.t];
@@ -556,6 +590,11 @@ return '<article class="card"><h3>'+e.t+'<span class="jp">'+e.jp+'</span></h3><d
 }).join('');
 countEl.textContent='显示 '+list.length+' / '+EVENTS.length+' 条（截至 2026年11月8日核实）';
 emptyEl.style.display=list.length?'none':'block';
+grid.querySelectorAll('.lu-posters img,.lu-gallery img,.lu-thumbs img').forEach(function(im){
+im.setAttribute('tabindex','0'); im.setAttribute('role','button');
+im.setAttribute('title','点击查看大图');
+var _a=im.getAttribute('alt')||'商品图'; im.setAttribute('aria-label','查看大图：'+_a);
+});
 }
 document.querySelectorAll('.chip').forEach(function(b){
 b.addEventListener('click',function(){
@@ -570,6 +609,60 @@ b.setAttribute('aria-pressed','true'); curMethod=b.getAttribute('data-mf'); rend
 });
 });
 document.getElementById('q').addEventListener('input',render);
+/* ---- lightbox: click any product / poster image to view large ---- */
+var lbEl=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap'), lbCount=document.getElementById('lbCount'), lbStage=document.getElementById('lbStage'), lbPrev=document.getElementById('lbPrev'), lbNext=document.getElementById('lbNext');
+var lbList=[], lbIdx=0, lbReturnFocus=null;
+function lbShow(){
+var it=lbList[lbIdx]; if(!it) return;
+lbImg.src=it.src; lbImg.alt=it.alt||'';
+lbCap.textContent=it.alt||'';
+lbCount.textContent=(lbIdx+1)+' / '+lbList.length;
+lbPrev.hidden=lbList.length<2; lbNext.hidden=lbList.length<2;
+lbStage.classList.remove('zoomed'); lbStage.scrollTop=0; lbStage.scrollLeft=0;
+}
+function lbOpen(imgEl){
+var card=imgEl.closest('.card'); var scope=card||document;
+var imgs=Array.prototype.slice.call(scope.querySelectorAll('.lu-posters img,.lu-gallery img,.lu-thumbs img'));
+if(!imgs.length) imgs=[imgEl];
+lbList=imgs.map(function(im){ return {src:im.getAttribute('src'), alt:im.getAttribute('alt')||''}; });
+lbIdx=Math.max(0,imgs.indexOf(imgEl));
+lbReturnFocus=imgEl;
+lbEl.hidden=false; document.body.style.overflow='hidden';
+lbShow();
+document.getElementById('lbClose').focus();
+}
+function lbCloseFn(){
+lbEl.hidden=true; document.body.style.overflow='';
+lbImg.removeAttribute('src');
+if(lbReturnFocus&&lbReturnFocus.focus) lbReturnFocus.focus();
+}
+function lbStep(d){ if(lbList.length<2) return; lbIdx=(lbIdx+d+lbList.length)%lbList.length; lbShow(); }
+grid.addEventListener('click',function(ev){
+var t=ev.target;
+if(t&&t.matches&&t.matches('.lu-posters img,.lu-gallery img,.lu-thumbs img')) lbOpen(t);
+});
+grid.addEventListener('keydown',function(ev){
+var t=ev.target;
+if((ev.key==='Enter'||ev.key===' ')&&t&&t.matches&&t.matches('.lu-posters img,.lu-gallery img,.lu-thumbs img')){ ev.preventDefault(); lbOpen(t); }
+});
+document.getElementById('lbClose').addEventListener('click',lbCloseFn);
+lbPrev.addEventListener('click',function(){ lbStep(-1); });
+lbNext.addEventListener('click',function(){ lbStep(1); });
+lbImg.addEventListener('click',function(){ lbStage.classList.toggle('zoomed'); });
+lbEl.addEventListener('click',function(ev){ if(ev.target===lbEl||ev.target===lbStage) lbCloseFn(); });
+document.addEventListener('keydown',function(ev){
+if(lbEl.hidden) return;
+if(ev.key==='Escape') lbCloseFn();
+else if(ev.key==='ArrowLeft') lbStep(-1);
+else if(ev.key==='ArrowRight') lbStep(1);
+});
+var lbTx=null;
+lbStage.addEventListener('touchstart',function(ev){ lbTx=ev.changedTouches[0].clientX; },{passive:true});
+lbStage.addEventListener('touchend',function(ev){
+if(lbTx===null||lbStage.classList.contains('zoomed')) return;
+var dx=ev.changedTouches[0].clientX-lbTx; lbTx=null;
+if(Math.abs(dx)>48) lbStep(dx<0?1:-1);
+},{passive:true});
 render();
 </script>
 </body>
