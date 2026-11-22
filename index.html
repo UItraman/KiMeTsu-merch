@@ -156,6 +156,9 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 .lu-row{align-items:center}
 .lu-thumbs{display:flex;gap:4px;flex:0 1 auto;flex-wrap:wrap;max-width:236px}
 .lu-thumbs img{width:54px;height:54px;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:#fff;display:block}
+/* anti-hotlink fallback: text link in the image slot, opens the official page */
+.lu-extlink{display:inline-flex;align-items:center;justify-content:center;height:54px;padding:0 10px;border:1.5px dashed var(--teal);border-radius:8px;color:var(--teal);font-size:12.5px;font-weight:800;text-decoration:none;background:var(--surface2);white-space:nowrap}
+.lu-extlink:hover,.lu-extlink:focus-visible{text-decoration:underline}
 .lu-row .lu-main{flex:1;min-width:120px}
 /* clickable images — tap / click to view large */
 .lu-posters img,.lu-gallery img,.lu-thumbs img{cursor:zoom-in}
@@ -179,6 +182,9 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 .pb-imgs img:hover{outline:2px solid var(--teal);outline-offset:1px}
 .pb-imgs img:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 .pb-noimg{flex:1;display:flex;align-items:center;justify-content:center;min-height:84px;border:1.5px dashed #cfc2a4;border-radius:6px;color:#8a7c62;font-size:12px;font-weight:700;background:#fbf7ec;text-align:center;padding:6px}
+.pb-extlink{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:84px;border:1.5px dashed #b98a1c;border-radius:6px;color:#8a5a08;font-size:13px;font-weight:800;background:#fbf7ec;text-align:center;padding:6px;text-decoration:none}
+.pb-extlink span{font-size:11px;font-weight:700;color:#8a7c62}
+.pb-extlink:hover{text-decoration:underline}
 .pb-price{font-size:19px;font-weight:900;color:#a52a20;padding:6px 8px 0;line-height:1.25;font-variant-numeric:tabular-nums}
 .pb-price small{font-size:11px;color:#8a7c62;font-weight:700}
 .pb-kind{font-size:11.5px;color:#6f6558;line-height:1.5;padding:2px 8px 9px}
@@ -1120,11 +1126,11 @@ note:'来源：万代南梦宫活动页 ＋ Banpresto Navi 官方作品页（同
 ['研ぎあげろ！研鑽指導（小游戏 1 次）','¥700','景品：A 赏 卡包／B 赏 亚克力片立牌／C 赏 徽章／D 赏 视觉贴纸（不可单独购买）'],
 ['目ェかっぴらけェ！瞬発稽古（小游戏 1 次）','¥800','参加赏：亚克力钥匙扣']],
 note:'⚠️ 原创周边（オリジナルグッズ）的商品名／价格只印在官方图片里，文字层读不到，本次未转录、未猜测；商品页其余单品图为懒加载系列，与商品的对应未逐一确认，不硬配对——上方只放已确认对应的 2 张官方商品图。小游戏景品图已确认对应，配在各小游戏行行首（A–D 赏依次排列）。特设站页注：价格均为含税、图案可选、不参加线上贩售。博多页的「購入制限・在庫状況」区本次未展开具体数值。来源：Cross Store 特设站商品页／小游戏页、博多官方告知。'},
-'鬼之栖街 — 博多会场':{count:'仅 2 品价格经官方贩售渠道确认',rows:[
+'鬼之栖街 — 博多会场':{count:'仅 2 品价格经官方贩售渠道确认 · 单品图为行首官方链接（Premium Bandai 防盗链）',rows:[
 ['-鬼之棲街- アクリルスタンド','¥1,200','数量限定 · Premium Bandai「ナムコパークス」特集确认'],
 ['-鬼之棲街- 箔押しアクリルスタンド','¥2,100','数量限定 · 同上确认'],
 ['ジャンボうちわ／アクリル製小物入れ／ネックストラップ（アクリルチャームつき）等','未确认','同特集有列名，本次未取到各价']],
-note:'⚠️ 特设站商品页同为图片型：缶バッジコレクション、クリアカードコレクション、ネームバッジコレクション、キャンディ風キーホルダー等品名与价格未能从官方文字层逐项核实，不混入确认清单；小游戏「糸を辿れ！鬼御籤」景品（亚克力板 全 8 种等）同理未逐项确认。图片：官方商品一览海报图未确认存在，9 品的单品图因 Premium Bandai 商品页访问受限（403）未取得，行首不配图；上方为博多会场的官方主视觉图。购入特典：店头相关商品单笔满 ¥3,000 赠「ねこ型イラストシート（全 8 种）」1 枚。线上贩售：Premium Bandai 2026/9/2 12:00–11/24 23:00 左右（线上不附猫型插画纸特典）。⚠️ 注意：鬼之棲街的会场是博多；横滨的是「追憶回廊ノ導」，别混淆。来源：特设站、博多告知、Premium Bandai 特集。'},
+note:'⚠️ 特设站商品页同为图片型：缶バッジコレクション、クリアカードコレクション、ネームバッジコレクション、キャンディ風キーホルダー等品名与价格未能从官方文字层逐项核实，不混入确认清单；小游戏「糸を辿れ！鬼御籤」景品（亚克力板 全 8 种等）同理未逐项确认。图片：官方商品一览海报图未确认存在；单品图在 Premium Bandai 有防盗链（返回 403），无法保存／嵌入本页——各商品行行首已放「官方图 ↗」链接，点开即到 Premium Bandai 官方特集页看官方图；上方为博多会场的官方主视觉图。购入特典：店头相关商品单笔满 ¥3,000 赠「ねこ型イラストシート（全 8 种）」1 枚。线上贩售：Premium Bandai 2026/9/2 12:00–11/24 23:00 左右（线上不附猫型插画纸特典）。⚠️ 注意：鬼之棲街的会场是博多；横滨的是「追憶回廊ノ導」，别混淆。来源：特设站、博多告知、Premium Bandai 特集。'},
 '柿安 Dining「黑毛和牛 无限 牛锅便当」':{count:'单品 · 官方商品页确认',rows:[
 ['『黒毛和牛 無限 牛鍋弁当』（オリジナルミニ巾着付き）','¥2,681','套装内容＝便当＋原创迷你束口袋 1 个；挂纸为新设计 2 种'],
 ['特典 オリジナルミニ巾着','随餐附赠','全 3 种（炭治郎・炼狱・猗窝座）随机 1 个／每份便当；尺寸 宽 11cm×长 15cm'],
@@ -1248,7 +1254,7 @@ var POSTERS={
 '鬼袭来再来 2026（ufotable DINING）':[['oni-minichara.webp','官方「みにきゃら」一览图（PC 版）· ufotable 官方活动页'],['oni-minichara-sp.webp','官方「みにきゃら」一览图（手机版）']],
 '「捌之章」in Namco 活动':[['namco-prize-all.jpg','官方一览图 1：景品 ALL 一览 · 万代南梦宫活动页'],['namco-tokuten-all.jpg','官方一览图 2：特典 ALL 一览 · 万代南梦宫活动页']],
 '追忆回廊之导 — 博多会场':[['cross-limited.png','官方商品图：記念キーホルダー（会場別限定商品）· Cross Store 特设站商品页'],['cross-img1.png','官方单品图：アクリルスタンド（原创周边）· 同商品页']],
-'鬼之栖街 — 博多会场':[['sumika-hakata.jpg','博多会场官方主视觉图（非商品一览海报；本活动官方未确认有商品一览图，单品图未取得——Premium Bandai 访问受限）']],
+'鬼之栖街 — 博多会场':[['sumika-hakata.jpg','博多会场官方主视觉图（非商品一览海报；本活动官方未确认有商品一览图。单品图在 Premium Bandai 有防盗链、无法嵌入，各商品行行首已放「官方图 ↗」官方链接）']],
 '花丸伎「即美味杯装味噌汤」× 鬼灭之刃':[['hana-promo.png','特设站官方宣传主图（限定包装全 6 种的单品图未取得）'],['hana-banner.png','花丸伎官网首页 PICK UP 横幅图「すぐ旨×鬼滅」']],
 '一番赏 鬼灭之刃 ～兄妹之鬼～':[['kuji-banner.webp','官方页首横幅图（非全赏一览图；B 赏以后官方未公布，无一览图）']],
 '舞台「鬼灭之刃」其之陆 BD/DVD':[['stage-jacket.jpg','官方封套图（舞台官网 BD/DVD 页唯一图片；各店铺特典图官方尚未公布）']]
@@ -1271,6 +1277,16 @@ var ROWIMG={
 '童磨 无比例手办（受注生产）':{0:['doma-main.jpg'],1:['doma-tokuten.jpg']},
 'るかっぷ 善逸＆獪岳 套装【限定座布団付き】':{0:['lookup-zenitsu.jpg']}
 };
+/* Anti-hotlink rule (user-set 2026/11/22): where the official image host blocks
+   saving/embedding, the product row's image slot carries a text link to the
+   official product page instead of a saved image. 鬼之棲街 product images live
+   on Premium Bandai, which returns 403 to fetching/embedding (verified in the
+   2026/11/8 official-image research); the research record carries no per-item
+   image URL, so every row links to the official Premium Bandai feature page
+   for the event: https://p-bandai.jp/namcoparks/CL00000326/ */
+var ROWLINK={
+'鬼之栖街 — 博多会场':{0:'https://p-bandai.jp/namcoparks/CL00000326/',1:'https://p-bandai.jp/namcoparks/CL00000326/',2:'https://p-bandai.jp/namcoparks/CL00000326/'}
+};
 /* Rule (user-set): if the official site provides a combined lineup poster, use the
    official original only — never add a site-generated board beside it. Events whose
    card already shows official combined / set-overview imagery are listed here and
@@ -1287,8 +1303,9 @@ return p;
 function boardHTML(e){
 var L=LINEUP[e.t]; if(!L||!L.rows.length||OFFICIAL_BOARD[e.t]) return '';
 var RI=ROWIMG[e.t]||{};
+var RL=ROWLINK[e.t]||{};
 var cells=L.rows.map(function(r,i){
-var media=RI[i]?RI[i].map(function(f){ return '<img src="'+GDIR+f+'" alt="'+r[0]+' 官方商品图" loading="lazy">'; }).join(''):'<div class="pb-noimg">暂无单品图</div>';
+var media=RI[i]?RI[i].map(function(f){ return '<img src="'+GDIR+f+'" alt="'+r[0]+' 官方商品图" loading="lazy">'; }).join(''):(RL[i]?'<a class="pb-extlink" href="'+RL[i]+'" target="_blank" rel="noopener">官方图 ↗<span>Premium Bandai 有防盗链，点开看官方图</span></a>':'<div class="pb-noimg">暂无单品图</div>');
 var m=(r[2]||'').match(/(?:^|[·・；;]\s*)(全\s*\d+\s*种)/);
 var badge=m?'<span class="pb-zen">'+m[1].replace(/\s/g,'')+'</span>':'';
 return '<div class="pb-cell"><div class="pb-name">'+r[0]+badge+'</div><div class="pb-imgs">'+media+'</div><div class="pb-price">'+pbPrice(r[1])+'</div>'+(r[2]?'<div class="pb-kind">'+r[2]+'</div>':'')+'</div>';
@@ -1311,9 +1328,11 @@ if(P){ h+='<div class="lu-posters">'+P.map(function(p){ return '<figure><img src
 var GA=GALLERY[e.t];
 if(GA){ h+='<div class="lu-gallery">'+GA.map(function(p){ return '<figure><img src="'+GDIR+p[0]+'" alt="'+p[1]+'" loading="lazy"><figcaption>'+p[1]+'</figcaption></figure>'; }).join('')+'</div>'; }
 var RI=ROWIMG[e.t]||{};
+var RL=ROWLINK[e.t]||{};
 L.rows.forEach(function(r,i){
 var th='';
 if(RI[i]){ th='<span class="lu-thumbs">'+RI[i].map(function(f){ return '<img src="'+GDIR+f+'" alt="'+r[0]+' 官方商品图" loading="lazy">'; }).join('')+'</span>'; }
+else if(RL[i]){ th='<span class="lu-thumbs"><a class="lu-extlink" href="'+RL[i]+'" target="_blank" rel="noopener" title="官方图在 Premium Bandai，有防盗链无法嵌入本页，点开在官方站看图">官方图 ↗</a></span>'; }
 h+='<div class="lu-row">'+th+'<b class="lu-main">'+r[0]+(r[2]?'<small>'+r[2]+'</small>':'')+'</b><span class="lu-price">'+r[1]+'</span></div>'; });
 if(L.note) h+='<p class="lu-note">'+L.note+'</p>';
 if(L.imgs&&L.imgs.length){ h+='<p class="lu-imgs">'+L.imgs.map(function(im){ return '<a href="'+im[1]+'" target="_blank" rel="noopener">🖼 '+im[0]+' ↗</a>'; }).join('')+'</p>'; }
